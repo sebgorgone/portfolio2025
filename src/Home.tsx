@@ -93,7 +93,7 @@ function Home() {
                   display: "flex",
                   flexGrow: 1,
                   height: '512px',
-                  backgroundColor: "white",
+                  backgroundColor:colorMode ? palDark[5] : "white",
                   maxWidth: "512px",
                   boxShadow: bs
                 }}
