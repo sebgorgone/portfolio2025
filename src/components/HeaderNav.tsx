@@ -69,7 +69,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/edits') }}
             >
 
                <img
@@ -86,7 +86,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/design') }}
             >
 
                <img
@@ -103,7 +103,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/code') }}
             >
 
                <img
@@ -167,7 +167,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/edits') }}
             >
                <img
                   className="def"
@@ -183,7 +183,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/design') }}
             >
                <img
                   className="def"
@@ -199,7 +199,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { nav('/code') }}
             >
                <img
                   className="def"
@@ -243,7 +243,7 @@ function HeaderNav() {
                >Sebastian Gorgone</h1>
 
                <label className="switch">
-                  <input type="checkbox" onChange={() => { toggleCM() }} />
+                  <input type="checkbox" checked={colorMode} onChange={() => { toggleCM() }} />
                   <span className="slider round"></span>
                </label>
             </div>

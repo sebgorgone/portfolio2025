@@ -1,26 +1,13 @@
 import { useColorMode } from "./context/ColorModeContext"
 import { useViewportSize } from "./context/useViewport"
-import { useState, useEffect } from "react";
 import HeaderNav from "./components/HeaderNav";
+import SideBarNav from './components/SideBarNav'
 
 
 function Home() {
-  const { colorMode, palDark, palLight, sideBar, bs } = useColorMode();
+  const { colorMode, palDark, palLight, bs } = useColorMode();
 
-  console.log(sideBar)
-
-  const { width } = useViewportSize()
-
-  function deviceParams() {
-    if (width > 1024) return 'desktop'
-    return 'mobile'
-  }
-
-  const [deviceType, setDeviceType] = useState<string>(deviceParams())
-
-  useEffect(() => {
-    setDeviceType(deviceParams)
-  }, [width]);
+  const { deviceType } = useViewportSize()
 
   function desktopLayout() {
     return (
@@ -40,18 +27,7 @@ function Home() {
         >
 
           {/* sidebar v*/}
-          <div
-            style={{
-              display: "flex",
-              width: sideBar ? "300px" : "0px",
-              backgroundColor: colorMode ? "black" : "white",
-              minHeight: "calc(100vh - 128px)",
-              overflow: "hidden",
-              alignItems: "flex-end",
-              padding: sideBar ? "8px" : "0px",
-            }}
-          >
-          </div>
+          <SideBarNav />
           {/* sidebar ^*/}
 
 
@@ -72,7 +48,7 @@ function Home() {
               style={{
                 position: "relative",
                 display: "flex",
-                flex: 1,
+                // flex: 1,
                 height: "400px",
               }}
             >

@@ -4,6 +4,7 @@ import { ColorModeProvider } from './context/ColorModeContext.tsx'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css'
 import Home from './Home.tsx'
+import VideoEdits from './pages/VideoEdits.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
 
           <Route path='/home' element={<Home />} />
 
+          <Route path='/edits' element={<VideoEdits />} />
 
         </Routes>
       </HashRouter>
