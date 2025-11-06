@@ -10,7 +10,7 @@ export function useViewportSize(): ViewportSize {
   const [size, setSize] = useState<ViewportSize>({
     width: window.innerWidth,
     height: window.innerHeight,
-    aspectRatio: window.innerWidth / parseFloat(window.innerHeight.toFixed(3))
+    aspectRatio: parseFloat((window.innerWidth / window.innerHeight).toFixed(3))
   });
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function useViewportSize(): ViewportSize {
       setSize({
         width: window.innerWidth,
         height: window.innerHeight,
-        aspectRatio: window.innerWidth / parseFloat(window.innerHeight.toFixed(3))
+        aspectRatio: parseFloat((window.innerWidth / window.innerHeight).toFixed(3))
       });
     }
 

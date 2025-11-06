@@ -1,5 +1,3 @@
-console.log('state loaded ' + lightMode)
-const lightMode = false;
 export default function (p) {
 
 //initialization info
@@ -62,6 +60,7 @@ function resetNow() {
 
 p.setup = function() {
   p.createCanvas(p.windowWidth, p.windowHeight);
+  p.background(63, 63, 63)
   lside = Math.max(p.windowWidth, p.windowHeight);
   r = lside / radDenom;
 
@@ -621,11 +620,11 @@ class Rhombus {
       p.noStroke();
     }
     if (this.state === 0) {
-      lightMode ? p.fill(8, 85, 120) : p.fill(19, 17, 16);
+      p.fill(19, 17, 16);
     } else if (this.state == 1) {
-      lightMode ? p.fill(52, 165, 183) : p.fill(71, 25, 83);
+      p.fill(71, 25, 83);
     } else if (this.state == 2) {
-      lightMode ? p.fill(95, 245, 245) : p.fill(98, 18, 125);
+      p.fill(98, 18, 125);
     }
 
     p.quad(
