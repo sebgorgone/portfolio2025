@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function HeaderNav() {
 
-   const { palDark, palLight, bs, colorMode, toggleCM, toggleSB } = useColorMode()
+   const { palDark, palLight, bs, colorMode, toggleCM, toggleSB, falseSB } = useColorMode()
 
    const nav = useNavigate()
 
@@ -52,7 +52,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { falseSB(); nav('/home') }}
             >
 
                <img
@@ -69,7 +69,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/edits') }}
+               onClick={() => { falseSB(); nav('/edits') }}
             >
 
                <img
@@ -86,7 +86,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/design') }}
+               onClick={() => { falseSB(); nav('/design') }}
             >
 
                <img
@@ -103,7 +103,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/code') }}
+               onClick={() => { falseSB(); nav('/code') }}
             >
 
                <img
@@ -151,7 +151,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/home') }}
+               onClick={() => { falseSB(); nav('/home') }}
             >
                <img
                   className="def"
@@ -167,7 +167,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/edits') }}
+               onClick={() => { falseSB(); nav('/edits') }}
             >
                <img
                   className="def"
@@ -183,7 +183,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/design') }}
+               onClick={() => { falseSB(); nav('/design') }}
             >
                <img
                   className="def"
@@ -199,7 +199,7 @@ function HeaderNav() {
             <button
                className='navButton'
                type='button'
-               onClick={() => { nav('/code') }}
+               onClick={() => { falseSB(); nav('/code') }}
             >
                <img
                   className="def"

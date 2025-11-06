@@ -8,7 +8,8 @@ interface colorModeContextType {
    palLight: string[],
    bs: string,
    sideBar: boolean,
-   toggleSB: () => void
+   toggleSB: () => void,
+   falseSB: () => void,
 };
 
 const ColorModeContext = createContext<colorModeContextType | undefined>(undefined);
@@ -38,10 +39,11 @@ export const ColorModeProvider = ({ children }: { children: ReactNode }) => {
    const toggleCM = () => setColorMode(prev => !prev);
 
    const [sideBar, setSideBar] = useState(false);
-   const toggleSB = () => setSideBar(prev => !prev)
+   const toggleSB = () => setSideBar(prev => !prev);
+   const falseSB = () => setSideBar(false);
 
    return (
-      <ColorModeContext.Provider value={{ palDark, palLight, bs, colorMode, toggleCM, sideBar, toggleSB }}>
+      <ColorModeContext.Provider value={{ palDark, palLight, bs, colorMode, toggleCM, sideBar, toggleSB, falseSB }}>
          {children}
       </ColorModeContext.Provider>
    )

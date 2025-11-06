@@ -1,13 +1,16 @@
-import { useColorMode } from "./context/ColorModeContext"
-import { useViewportSize } from "./context/useViewport"
+import { useColorMode } from "./context/ColorModeContext";
+import { useViewportSize } from "./context/useViewport";
+import { useNavigate } from "react-router-dom";
 import HeaderNav from "./components/HeaderNav";
 import SideBarNav from './components/SideBarNav'
 
 
 function Home() {
-  const { colorMode, palDark, palLight, bs } = useColorMode();
+  const { colorMode, palDark, palLight, bs, falseSB } = useColorMode();
 
-  const { deviceType } = useViewportSize()
+  const { deviceType } = useViewportSize();
+
+  const nav = useNavigate();
 
   function desktopLayout() {
     return (
@@ -137,7 +140,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/edits`) }}
                         style={{
                           width: "48px",
                           height: "48px",
@@ -165,7 +168,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/edits`) }}
                         style={{
                           width: "48px",
                           height: "48px",
@@ -324,7 +327,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/design`) }}
                         style={{
                           width: "48px",
                           height: "48px",
@@ -352,7 +355,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/design`) }}
                         style={{
                           width: "48px",
                           height: "48px",
@@ -500,7 +503,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/edits`) }}
                         style={{
                           width: "48px",
                           height: "48px",
@@ -528,7 +531,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { }}
+                        onClick={() => { falseSB(); nav(`/code`) }}
                         style={{
                           width: "48px",
                           height: "48px",

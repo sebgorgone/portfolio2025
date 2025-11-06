@@ -67,4 +67,57 @@ export const edits = [
       ref: 'eoty2023'
    },
 
-]
+];
+
+export const designs = [
+   {
+      title: 'illustrator final project',
+      meta: 'Illustrator 2024',
+      format: "portrait",
+      mediaType: 'image',
+      description: 'This is one of my designs for my Digital Media and Design foundations course final. I did all of the pieces in both Illustrator and Photoshop- including this design.',
+      ref: 'illbrupro24',
+      path:'designs/imadethisinalecture.png'
+   },
+   {
+      title: 'illustrator pen-tool project',
+      meta: 'Illustrator 2024',
+      format: 'portrait',
+      mediaType: 'image',
+      description: 'This is one of my first designs for a Digital Media and Design foundations course project, as well as my inital introduction to Adobe Illustrator. This was done in illustrator using the brush and pen tools.',
+      ref:'illpenpro2024',
+      path: 'designs/dmdproj1.jpg',
+   },
+   {
+      title: 'UCONN Skydiving Animation',
+      meta: 'Animation 2024',
+      format: 'landscape',
+      mediaType: 'video',
+      description: 'I animated the Uconn Skydiving logo (Which I did not design) for the Uconn Skydiving Invovlment Reel that I made for their instagram page. This was made in photoshop with key frames',
+      ref: 'ucsdanim',
+      path: 'designs/ucsdfinal.mp4'
+   },
+   {
+      title: 'DMD Final Project Animation',
+      meta: 'Animation 2024',
+      format: 'landscape',
+      mediaType: 'video',
+      description: 'For my Digital Media and Design Foundations final project it had been a requirement to make an animation as part of a design portfolio. I decided to do a frame by frame animation of a skydiving crash video. The result is this 10 second, 12 frame per second animation.',
+      ref: 'crazy12fpsanim',
+      path: 'designs/dmdfinalanimation.mp4',
+   },
+   {
+      title: 'Uconn Skydiving Tandem Weekend Poster ads',
+      meta: 'photoshop 2024',
+      format: 'multiple',
+      mediaType: 'image',
+      description: 'These are some of the designs that I made for the Uconn Skydiving team Instagram, as well as for posters that were hung up around campus.',
+      ref: 'ucsdtwpost24',
+      path: [
+         'design/tandemweekendposter1',
+         'design/tandemweekendposter3',
+         'design/tandemweekendposter6'
+      ]
+   }
+
+];
