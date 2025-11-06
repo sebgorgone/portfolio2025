@@ -39,7 +39,7 @@ function Home() {
           }}
         >
 
-          {/* sidebar */}
+          {/* sidebar v*/}
           <div
             style={{
               display: "flex",
@@ -52,12 +52,12 @@ function Home() {
             }}
           >
           </div>
+          {/* sidebar ^*/}
 
 
 
 
-
-          {/* contentbox */}
+          {/* contentbox v*/}
           <div
             style={{
               display: "flex",
@@ -67,7 +67,7 @@ function Home() {
             }}
           >
 
-
+            {/* background header v*/}
             <div
               style={{
                 position: "relative",
@@ -109,9 +109,10 @@ function Home() {
                 src={!colorMode ? "turningcubes/p5-light.html" : "turningcubes/p5-dark.html"}
               />
             </div>
+            {/* background header ^*/}
 
 
-            {/* three pages preview */}
+            {/* three pages preview v*/}
             <div
               style={{
                 display: "flex",
@@ -121,7 +122,7 @@ function Home() {
                 padding: "48px"
               }}
             >
-              {/*card 1*/}
+              {/* card 1 v*/}
               <div
                 style={{
                   display: "flex",
@@ -304,9 +305,10 @@ function Home() {
 
                 </div>
               </div>
+              {/* card 1 ^*/}
 
 
-              {/* card 2 */}
+              {/* card 2 v*/}
               <div
                 style={{
                   display: "flex",
@@ -316,7 +318,7 @@ function Home() {
                   maxWidth: "512px",
                   minWidth: "380px",
                   boxShadow: bs,
-                  borderTop: `solid 8px ${palLight[4]}`,
+                  borderTop: `solid 8px ${colorMode ? palDark[3] : palLight[3]}`,
                   padding: "8px"
                 }}
               >
@@ -480,8 +482,10 @@ function Home() {
 
                 </div>
               </div>
+              {/* card 2 ^*/}
 
-              {/* card 3 */}
+
+              {/* card 3 v*/}
               <div
                 style={{
                   display: "flex",
@@ -491,7 +495,7 @@ function Home() {
                   maxWidth: "512px",
                   minWidth: "380px",
                   boxShadow: bs,
-                  borderTop: `solid 8px ${palLight[4]}`,
+                  borderTop: `solid 8px ${colorMode ? palDark[4] : palLight[2]}`,
                   padding: "8px"
                 }}
               >
@@ -658,12 +662,15 @@ function Home() {
 
                 </div>
               </div>
+              {/* card 3 ^*/}
 
 
             </div>
+            {/* three pages preview ^*/}
 
 
           </div>
+          {/* contentbox ^*/}
 
         </div>
 

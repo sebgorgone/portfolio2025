@@ -19,7 +19,7 @@ let mode = 0;
 //      type 3 - interval filtering
 //      type 4 - interactive shifting 
 
-const radDenom = 13;
+const radDenom = 20;
 let r;
 let z = 1;
 let conditionfactor = 50;
@@ -38,19 +38,19 @@ let pause = false;
 //toggle debug
 let debuginfo = false;
 
-p.windowResized = function() {
-  pause = true;
-  rhombus = [];
-  let runtime = p.frameCount;
-  let bufferframes = 2;
-  resetframe = runtime + bufferframes;
-  p.resizeCanvas(p.windowWidth, p.windowHeight);
-  centers = [];
-  triocent = [];
-  faceStep = [];
-  indexcount = 0;
-  z = 1;
-}
+// p.windowResized = function() {
+//   pause = true;
+//   rhombus = [];
+//   let runtime = p.frameCount;
+//   let bufferframes = 2;
+//   resetframe = runtime + bufferframes;
+//   p.resizeCanvas(p.windowWidth, p.windowHeight);
+//   centers = [];
+//   triocent = [];
+//   faceStep = [];
+//   indexcount = 0;
+//   z = 1;
+// }
 
 function resetNow() {
   pause = false;
