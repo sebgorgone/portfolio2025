@@ -78,7 +78,7 @@ input:checked + .slider:before {
 
 @font-face {
    font-family: body;
-   src: url(bvp/BeVietnamPro-regular.ttf);
+   src: url(bvp/BeVietnamPro-Regular.ttf);
 }
 
 @font-face {
