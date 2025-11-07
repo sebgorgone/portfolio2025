@@ -1,15 +1,15 @@
 import { useColorMode } from "../context/ColorModeContext";
 import { useViewportSize } from "../context/useViewport";
 import { useNavigate } from "react-router-dom";
-import { edits } from "../context/useContent";
-import EditComponent from "../components/EditComponent";
+import { designs } from "../context/useContent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
+import DesignComponent from "../components/DesignComponent";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-function VideoEdits() {
+function DesignPage() {
    const location = useLocation();
 
    useEffect(() => {
@@ -30,9 +30,52 @@ function VideoEdits() {
 
    const nav = useNavigate();
 
+   function renderLinks() {
+   
+         return (
+            designs.map(design => (
+               <button
+               onClick={() => {nav(`/design#${design.ref}`)}}
+               key={design.ref}
+               className='editLinkButton'
+               style={{
+                  borderBottomLeftRadius: "8px",
+                  borderBottomRightRadius: "8px",
+                  border: "none",
+                  boxShadow: bs,
+                  display: "flex",
+                  backgroundColor: colorMode ? palDark[1] : palLight[5],
+                  justifyContent: "space-between",
+                  padding: "8px",
+                  marginBottom: "16px",
+                  borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[2]}`
+               }}
+               >
+                  <h3
+                     style={{
+                        fontFamily: "subheader",
+                        fontSize: "16px",
+                        color: "white"
+                     }}
+                  >
+                     {design.title}
+                  </h3>
+   
+                  <p
+                     style={{
+                        fontFamily: "subtext",
+                        fontSize: "16px",
+                        color: "white"
+                     }}
+                  >{design.meta}</p>
+   
+               </button>
+            ))
+         )
+   }
 
-   function renderEdits() {
-      if (edits.length < 1) return
+   function renderDesigns() {
+      if (designs.length < 1) return
 
       return (
          <div
@@ -44,54 +87,10 @@ function VideoEdits() {
                marginTop: "48px"
             }}
          >
-            {edits.map(edit => (
-               <EditComponent key={edit.ref} edit={edit} />
+            {designs.map(design => (
+               <DesignComponent key={design.ref} design={design} />
             ))}
          </div>
-      )
-   }
-
-   function renderLinks() {
-
-      return (
-         edits.map(edit => (
-            <button
-            onClick={() => {nav(`/edits#${edit.ref}`)}}
-            key={edit.ref}
-            className='editLinkButton'
-            style={{
-               borderBottomLeftRadius: "8px",
-               borderBottomRightRadius: "8px",
-               border: "none",
-               boxShadow: bs,
-               display: "flex",
-               backgroundColor: colorMode ? palDark[1] : palLight[5],
-               justifyContent: "space-between",
-               padding: "8px",
-               marginBottom: "16px",
-               borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[2]}`
-            }}
-            >
-               <h3
-                  style={{
-                     fontFamily: "subheader",
-                     fontSize: "16px",
-                     color: "white"
-                  }}
-               >
-                  {edit.title}
-               </h3>
-
-               <p
-                  style={{
-                     fontFamily: "subtext",
-                     fontSize: "12px",
-                     color: "white"
-                  }}
-               >{edit.meta}</p>
-
-            </button>
-         ))
       )
    }
 
@@ -149,7 +148,7 @@ function VideoEdits() {
                            fontFamily: "title"
                         }}
                      >
-                        Video Editing
+                        Graphic Design
                      </div>
 
                      {/* iframe background */}
@@ -177,34 +176,19 @@ function VideoEdits() {
                         padding: "16px",
                         gap: "16px",
                         marginTop: "48px",
+                        justifyContent: "center"
                      }}
                   >
 
-                     <div
-                        style={{
-                           display: "flex",
-                           flex: 1,
-                           justifyContent: "left",
-                           alignItems: "flex-start",
-                           fontFamily: "subHeader",
-                           color: colorMode ? palDark[0] : palLight[5],
-                           fontSize: "32px",
-                           background: colorMode ? "black" : "white",
-                           padding: "16px",
-                           boxShadow: bs
-                        }}
-                     > 
-                        As early as I had access to a computer I've loved editing videos. It didnt matter what I had- video games, skiing, skatebaording, sports. If I had clips of it I made an edit. Its always been a big hobby of mine and I feel a fitting part of my portfolio. I post just about all of them on my instagram. Link at the bottom of the page.
-                     </div>
-
 
                      <div
                         style={{
                            display: "flex",
-                           flex: 1,
+                           width: "50%",
                            flexDirection: "column",
                            alignItems: "center",
                            padding: "8px",
+                           paddingTop: "16px",
                            backgroundColor: colorMode ? "black" : "white",
                            boxShadow: bs
                         }}
@@ -219,7 +203,10 @@ function VideoEdits() {
                   {/* split description / links ^*/}
 
 
-                  {renderEdits()}
+
+                  {renderDesigns()}
+
+
 
 
 
@@ -254,4 +241,4 @@ function VideoEdits() {
    )
 }
 
-export default VideoEdits;
+export default DesignPage;

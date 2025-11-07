@@ -73,7 +73,7 @@ export const designs = [
    {
       title: 'illustrator final project',
       meta: 'Illustrator 2024',
-      format: "portrait",
+      format: "landscape",
       mediaType: 'image',
       description: 'This is one of my designs for my Digital Media and Design foundations course final. I did all of the pieces in both Illustrator and Photoshop- including this design.',
       ref: 'illbrupro24',
@@ -91,9 +91,9 @@ export const designs = [
    {
       title: 'UCONN Skydiving Animation',
       meta: 'Animation 2024',
-      format: 'landscape',
+      format: 'portrait',
       mediaType: 'video',
-      description: 'I animated the Uconn Skydiving logo (Which I did not design) for the Uconn Skydiving Invovlment Reel that I made for their instagram page. This was made in photoshop with key frames',
+      description: 'I animated the Uconn Skydiving logo (Which I did not design) for the Uconn Skydiving invovlment reel that I made for their instagram page. This was made in photoshop with key frames',
       ref: 'ucsdanim',
       path: 'designs/ucsdfinal.mp4'
    },
@@ -110,13 +110,22 @@ export const designs = [
       title: 'Uconn Skydiving Tandem Weekend Poster ads',
       meta: 'photoshop 2024',
       format: 'multiple',
-      mediaType: 'image',
+      mediaType: '',
       description: 'These are some of the designs that I made for the Uconn Skydiving team Instagram, as well as for posters that were hung up around campus.',
       ref: 'ucsdtwpost24',
       path: [
-         'design/tandemweekendposter1',
-         'design/tandemweekendposter3',
-         'design/tandemweekendposter6'
+         {
+            url :'designs/tandemweekendposter1.png',
+            type: 'image'
+         },
+         {
+            url :'designs/tandemweekendposter1.png',
+            type: 'image'
+         },
+         {
+            url :'designs/tandemweekendposter1.png',
+            type: 'image'
+         },
       ]
    }
 

@@ -428,7 +428,7 @@ function Home() {
                     }}
                   >
                     <img 
-                      src='designs/illustrator/imadethisinalecture.png'
+                      src='designs/imadethisinalecture.png'
                       style={{width: "70%", boxShadow: bs}}
                     />
 

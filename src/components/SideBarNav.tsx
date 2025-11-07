@@ -1,5 +1,5 @@
 import { useColorMode } from "../context/ColorModeContext";
-import { edits } from "../context/useContent";
+import { edits, designs } from "../context/useContent";
 import { useNavigate } from "react-router-dom";
 
 function SideBarNav() {
@@ -50,6 +50,50 @@ function SideBarNav() {
     )
    }
 
+   function designLinkDisplay() {
+
+    return(
+      <>
+        <button
+            type='button'
+            className='sidebarLink'
+            onClick={() => { falseSB(); nav('/deisgn')}}
+            style={{
+              fontFamily: "subheader",
+              fontSize: "32px",
+              color: colorMode ? "white": palLight[5],
+              background: "none",
+              border: "none",
+              marginBottom: "16px"
+            }}
+          >
+
+            Design
+
+        </button>
+
+        {designs.map(design => (
+          <button
+            key={design.ref}
+            type='button'
+            className='sidebarLink'
+            onClick={() => { falseSB(); nav(`/design#${design.ref}`)}}
+            style={{
+              fontFamily: "body",
+              fontSize: "12px",
+              color: colorMode ? "white": palLight[5],
+              background: "none",
+              border: "none",
+              marginBottom: "8px"
+            }}
+          >
+            {design.title}
+        </button>
+        ))}
+      </>
+    )
+   }
+
    return (
 
       <div
@@ -65,6 +109,7 @@ function SideBarNav() {
             }}
           >
             {editLinkDisplay()}
+            {designLinkDisplay()}
           </div>
    )
 };
