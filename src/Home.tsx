@@ -17,15 +17,19 @@ function Home() {
       <>
 
         <HeaderNav />
+
         <div
           style={{
-            paddingTop: "128px",
+            position: "fixed",
+            top: "128px",                  
+            left: 0,
+            right: 0,
+            bottom: 0,
             display: "flex",
-            minHeight: "calc(100vh - 128px)",
-            backgroundColor: "none",
-            width: "100%",
+            width: "100vw",
+            height: "calc(100vh - 128px)", 
+            overflow: "hidden",            
             zIndex: 1,
-            marginBottom: "24px"
           }}
         >
 
@@ -40,35 +44,36 @@ function Home() {
           <div
             style={{
               display: "flex",
-              flex: 1,
               flexDirection: "column",
-
+              flexGrow: 1,
+              overflowY: "auto",
+              height: "100%",
+              scrollbarGutter: "stable",
             }}
           >
 
             {/* background header v*/}
             <div
               style={{
-                position: "relative",
                 display: "flex",
-                // flex: 1,
                 height: "400px",
+                width: "100%"
               }}
             >
               {/* overlayed text */}
               <div
                 style={{
-                  position: "absolute",
+                  position: "relative",
                   top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  left: "35%",
                   color: !colorMode ? palLight[3] : palDark[0],
                   fontSize: "48px",
                   fontWeight: 600,
                   textAlign: "center",
-                  pointerEvents: "none", // so clicks pass through to iframe
                   zIndex: 2,
-                  fontFamily: "title"
+                  fontFamily: "title",
+                  width: 0,
+                  whiteSpace: "nowrap"
                 }}
               >
                 Sebastian Gorgone
@@ -78,9 +83,8 @@ function Home() {
               <iframe
                 style={{
                   width: "100%",
-                  height: "100%",
+                  height: "400px",
                   border: "none",
-                  position: "absolute",
                   top: 0,
                   left: 0,
                   zIndex: 1,
@@ -427,9 +431,9 @@ function Home() {
                       flex: 1,
                     }}
                   >
-                    <img 
+                    <img
                       src='designs/imadethisinalecture.png'
-                      style={{width: "70%", boxShadow: bs}}
+                      style={{ width: "70%", boxShadow: bs }}
                     />
 
                   </div>
@@ -602,7 +606,7 @@ function Home() {
                       flex: 1,
                     }}
                   >
-                    <iframe 
+                    <iframe
                       style={{
                         border: "none",
                         boxShadow: bs,

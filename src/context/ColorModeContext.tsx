@@ -37,7 +37,7 @@ const bs = `0 1px 2px rgba(0, 0, 0, 0.4),0 2px 4px rgba(0, 0, 0, 0.3),0 4px 8px 
 export const ColorModeProvider = ({ children }: { children: ReactNode }) => {
    const [colorMode, setColorMode] = useState(false);
    const toggleCM = () => setColorMode(prev => !prev);
-
+   
    const [sideBar, setSideBar] = useState(false);
    const toggleSB = () => setSideBar(prev => !prev);
    const falseSB = () => setSideBar(false);

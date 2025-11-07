@@ -20,7 +20,8 @@ function SideBarNav() {
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
-              marginBottom: "16px"
+              marginBottom: "16px",
+              whiteSpace: "nowrap",
             }}
           >
 
@@ -40,7 +41,8 @@ function SideBarNav() {
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
-              marginBottom: "8px"
+              marginBottom: "8px",
+              whiteSpace: "nowrap",
             }}
           >
             {edit.title}
@@ -64,7 +66,8 @@ function SideBarNav() {
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
-              marginBottom: "16px"
+              marginBottom: "16px",
+              whiteSpace: "nowrap",
             }}
           >
 
@@ -84,7 +87,8 @@ function SideBarNav() {
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
-              marginBottom: "8px"
+              marginBottom: "8px",
+              whiteSpace: "nowrap",
             }}
           >
             {design.title}

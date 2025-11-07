@@ -101,13 +101,16 @@ function DesignPage() {
             <HeaderNav />
             <div
                style={{
-                  paddingTop: "128px",
+                  position: "fixed",
+                  top: "128px",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
                   display: "flex",
-                  minHeight: "calc(100vh - 128px)",
-                  backgroundColor: "none",
-                  width: "100%",
+                  width: "100vw",
+                  height: "calc(100vh - 128px)",
+                  overflow: "hidden",
                   zIndex: 1,
-                  marginBottom: "24px"
                }}
             >
 
@@ -117,35 +120,36 @@ function DesignPage() {
                <div
                   style={{
                      display: "flex",
-                     flex: 1,
                      flexDirection: "column",
-
+                     flex: 1,
+                     overflowY: "auto",
+                     height: "100%",
+                     scrollbarGutter: "stable",
                   }}
                >
 
                   {/* headertitle v*/}
                   <div
                      style={{
-                        position: "relative",
                         display: "flex",
-                        // flex: 1,
                         height: "200px",
+                        width: "100%"
                      }}
                   >
                      {/* overlayed text */}
                      <div
                         style={{
-                           position: "absolute",
-                           top: "50%",
-                           left: "50%",
-                           transform: "translate(-50%, -50%)",
+                           position: "relative",
+                           top: "35%",
+                           left: "37%",
                            color: !colorMode ? palLight[3] : palDark[0],
                            fontSize: "48px",
                            fontWeight: 600,
                            textAlign: "center",
-                           pointerEvents: "none", 
                            zIndex: 2,
-                           fontFamily: "title"
+                           fontFamily: "title",
+                           width: 0,
+                           whiteSpace: "nowrap"
                         }}
                      >
                         Graphic Design
@@ -155,9 +159,8 @@ function DesignPage() {
                      <iframe
                         style={{
                            width: "100%",
-                           height: "100%",
+                           height: "200px",
                            border: "none",
-                           position: "absolute",
                            top: 0,
                            left: 0,
                            zIndex: 1,

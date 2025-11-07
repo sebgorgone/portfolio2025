@@ -115,15 +115,15 @@ export const designs = [
       ref: 'ucsdtwpost24',
       path: [
          {
-            url :'designs/tandemweekendposter1.png',
+            url :'designs/twp1.png',
             type: 'image'
          },
          {
-            url :'designs/tandemweekendposter1.png',
+            url :'designs/twp2.png',
             type: 'image'
          },
          {
-            url :'designs/tandemweekendposter1.png',
+            url :'designs/twp3.png',
             type: 'image'
          },
       ]
