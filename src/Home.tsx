@@ -64,7 +64,7 @@ function Home() {
               <div
                 style={{
                   position: "relative",
-                  top: "50%",
+                  top: "44%",
                   left: "35%",
                   color: !colorMode ? palLight[3] : palDark[0],
                   fontSize: "48px",
