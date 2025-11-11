@@ -507,7 +507,7 @@ function Home() {
                       <button
                         className='navButton'
                         type='button'
-                        onClick={() => { falseSB(); nav(`/edits`) }}
+                        onClick={() => { falseSB(); nav(`/code`) }}
                         style={{
                           width: "48px",
                           height: "48px",

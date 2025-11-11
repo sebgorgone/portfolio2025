@@ -130,3 +130,92 @@ export const designs = [
    }
 
 ];
+
+export const programs = [
+   {
+      title: 'Invited By Nat',
+      description: 'A social app created for users to interact with the buisness and their community. Made for Invited By Nat out of west hartford CT.',
+      meta: 'Typescript-React-NodeJS-Socket.io-ExpressJS-AWS-mySQL-nginx',
+      page: '/code/ibn',
+      ref: 'ibn2025',
+      mediaLink: 'codepage/ibn1by1.png',
+      referenceLinks: [
+         {
+            title: 'invited by nat',
+            url: 'https://invitedbynat.live',
+         },
+      ]
+   },
+   {
+      title: 'Tassk Management',
+      description: 'A local storage based to do app with JSON based storage of multiple to do lists.',
+      meta: 'Javascript-React',
+      page: '/code/tassk-management',
+      ref: 'tsskmngmnt',
+      mediaLink: 'codepage/tm1by1.png',
+      referenceLinks: [
+         {
+            title: 'Tassk Management',
+            url: 'https://sebgorgone.github.io/Tassk-Management/',
+         },
+         {
+            title: 'Tassk Management github repo',
+            url: 'https://github.com/sebgorgone/Tassk-Management',
+         },
+      ]
+   },
+   {
+      title: 'Cloud Log',
+      description: 'My Fullstack web app for skydivers to track their jumps and keep statistics and records. The hosted version is a local Version I converted to work within the local storage of your browser.',
+      meta: 'Javascript-React-NodeJS-ExpressJS-AWS-mySQL',
+      page: '/code/cloudlog',
+      ref: 'cloudlog2025',
+      mediaLink: 'codepage/cl1by1.png',
+      referenceLinks: [
+         {
+            title: 'Cloud Log local',
+            url: 'https://sebgorgone.github.io/cloudlog-local/',
+         },
+         {
+            title: 'Cloud Log fullstack github repo',
+            url: 'https://github.com/sebgorgone/cloud-log'
+         },
+      ]
+   },
+   {
+      title: 'Turning Cubes JS',
+      description: 'What I consider my first real Javascript project is a generative animation of tiled rhombi that rotate to give the illusion of a morphing topology',
+      meta: 'Javascript-P5.JS',
+      page: '/code/turningcubes',
+      ref: 'turningcubejs',
+      mediaLink: 'codepage/tc1by1.png',
+      referenceLinks: [
+         {
+            title: 'turning cubes js',
+            url: 'https://sebgorgone.github.io/3d-cube-visual-p5js/',
+         },
+         {
+            title: 'turning cubes github repo',
+            url: 'https://github.com/sebgorgone/3d-cube-visual-p5js'
+         }
+      ]
+   },
+   {
+      title: 'My Portfolio',
+      description: "Including this website and another I never really finished ive made about 3 portfolios showcasing my work. I go back and redo it because every time I feel like I can make it better, and its a fun project where I get to look back on what I've done",
+      meta: 'Typescript-React',
+      page: '/code/portfolio',
+      ref: 'ptflio2025',
+      mediaLink: 'codepage/port1by1.png',
+      referenceLinks: [
+         {
+            title: 'portfolio 2 (react-js)',
+            url: 'https://github.com/sebgorgone/portfolio_revised',
+         },
+         {
+            title: 'portfolio 1(html-css-js)',
+            url: 'https://github.com/sebgorgone/Sebastian-Gorgone-Portfolio',
+         },
+      ]
+   },
+]

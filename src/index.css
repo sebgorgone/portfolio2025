@@ -129,3 +129,9 @@ button {
 .sidebarLink:hover {
   text-decoration: underline;
 }
+
+.codeProjButton:hover {
+  padding: 8px;
+  opacity: 70%;
+  box-sizing: border-box;
+}

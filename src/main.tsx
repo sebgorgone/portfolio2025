@@ -6,6 +6,7 @@ import './index.css'
 import Home from './Home.tsx'
 import VideoEdits from './pages/VideoEdits.tsx';
 import DesignPage from './pages/designPage.tsx';
+import CodePage from './pages/CodePage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -20,6 +21,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path='/edits' element={<VideoEdits />} />
 
           <Route path='/design' element={<DesignPage />} />
+
+          <Route path='/code' element={<CodePage />} />
           
         </Routes>
       </HashRouter>
