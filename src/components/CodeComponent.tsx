@@ -20,6 +20,7 @@ interface referenceLink {
    url: string,
 }
 
+
 function CodeComponent(props: props) {
 
    const { title, description, meta, page, ref, mediaLink, referenceLinks } = props.project;
@@ -29,6 +30,22 @@ function CodeComponent(props: props) {
    const nav = useNavigate();
 
 
+   function renderLinks() {
+      if (referenceLinks.length === 0) return
+
+      return referenceLinks.map((link, idx) => (
+         <a
+            key={idx}
+            href={link.url}
+            target='_blank'
+            style={{
+               fontFamily: "subtext",
+               color: colorMode ? palDark[2] : palLight[5],
+               fontSize: "24px"
+            }}
+         >{link.title}</a>
+      ))
+   }
 
    return (
       <>
@@ -43,6 +60,7 @@ function CodeComponent(props: props) {
                border: "none",
                borderLeft: `solid 8px ${colorMode ? palDark[4] : palLight[4]}`,
                boxShadow: bs,
+
             }}
             onClick={() => { falseSB(); nav(page) }}
             className='codeProjButton'
@@ -52,7 +70,9 @@ function CodeComponent(props: props) {
                   display: "flex",
                   flex: 1,
                   flexDirection: "column",
-                  padding: "8px"
+                  padding: "8px",
+                  justifyContent: "space-between",
+                  height: "100%"
                }}
             >
                <div
@@ -78,23 +98,18 @@ function CodeComponent(props: props) {
                   style={{
                      display: "flex",
                      width: "100%",
-                     justifyContent: "flex-start",
                      color: colorMode ? palDark[0] : palLight[5],
                      fontFamily: "body",
                      fontSize: "32px",
-                     marginTop: "64px"
+                     textAlign: 'left'
                   }}
                >{description}</div>
 
-               <div
-                  style={{
-                     width: "100%",
-                     alignItems: "flex-start",
-                  }}
-               >hello hello hello</div>
+               <div></div>
+
             </div>
 
-            <img 
+            <img
                style={{
                   width: "30%",
                   aspectRatio: "1 / 1",
@@ -104,6 +119,24 @@ function CodeComponent(props: props) {
             />
 
          </button>
+
+         <div
+            style={{
+               width: "90%",
+               maxWidth: "1400px",
+               display: 'flex',
+               alignItems: "flex-start",
+               flexDirection: "column",
+               gap: '4px',
+               justifyContent: "flex-end",
+            }}
+         >
+
+            {renderLinks()}
+
+         </div>
+
+
       </>
    )
 }

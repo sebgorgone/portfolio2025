@@ -183,6 +183,24 @@ export const programs = [
       ]
    },
    {
+      title: "JS 'blockblast'",
+      description: "My blockblast clone built using the javascript visual library p5",
+      meta: 'Javascript-P5.JS',
+      page: '/code/jsblockblast',
+      ref: 'jsbb2025',
+      mediaLink: 'codepage/jsb1by1.png',
+      referenceLinks: [
+         {
+            title: 'js blockblast',
+            url: 'https://sebgorgone.github.io/js-blockblast/',
+         },
+         {
+            title: 'js blockblast repo',
+            url: 'https://github.com/sebgorgone/js-blockblast',
+         },
+      ]
+   },
+   {
       title: 'Turning Cubes JS',
       description: 'What I consider my first real Javascript project is a generative animation of tiled rhombi that rotate to give the illusion of a morphing topology',
       meta: 'Javascript-P5.JS',
@@ -218,4 +236,5 @@ export const programs = [
          },
       ]
    },
+   
 ]
