@@ -2,7 +2,7 @@ import { useColorMode } from "../context/ColorModeContext";
 import { useViewportSize } from "../context/useViewport";
 import { useNavigate, useLocation } from "react-router-dom";
 import { programs } from "../context/useContent";
-import CodeComponent from "../components/codeComponent";
+import CodeComponent from "../components/CodeComponent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
 
