@@ -48,7 +48,7 @@ function DesignPage() {
                   justifyContent: "space-between",
                   padding: "8px",
                   marginBottom: "16px",
-                  borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[2]}`
+                  borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[3]}`
                }}
                >
                   <h3
@@ -187,7 +187,7 @@ function DesignPage() {
                      <div
                         style={{
                            display: "flex",
-                           width: "50%",
+                           width: "70%",
                            flexDirection: "column",
                            alignItems: "center",
                            padding: "8px",

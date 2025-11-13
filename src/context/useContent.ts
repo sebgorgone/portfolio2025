@@ -135,7 +135,7 @@ export const programs = [
    {
       title: 'Invited By Nat',
       description: 'A social app created for users to interact with the buisness and their community. Made for Invited By Nat out of west hartford CT.',
-      meta: 'Typescript-React-NodeJS-Socket.io-ExpressJS-AWS-mySQL-nginx',
+      meta: 'Typescript-React-NodeJS-Socket.io-ExpressJS-AWS-mySQL-nginx 2025',
       page: '/code/ibn',
       ref: 'ibn2025',
       mediaLink: 'codepage/ibn1by1.png',
@@ -149,7 +149,7 @@ export const programs = [
    {
       title: 'Tassk Management',
       description: 'A local storage based to do app with JSON based storage of multiple to do lists.',
-      meta: 'Javascript-React',
+      meta: 'Javascript-React 2025',
       page: '/code/tassk-management',
       ref: 'tsskmngmnt',
       mediaLink: 'codepage/tm1by1.png',
@@ -167,7 +167,7 @@ export const programs = [
    {
       title: 'Cloud Log',
       description: 'My Fullstack web app for skydivers to track their jumps and keep statistics and records. The hosted version is a local Version I converted to work within the local storage of your browser.',
-      meta: 'Javascript-React-NodeJS-ExpressJS-AWS-mySQL',
+      meta: 'Javascript-React-NodeJS-ExpressJS-AWS-mySQL 2025',
       page: '/code/cloudlog',
       ref: 'cloudlog2025',
       mediaLink: 'codepage/cl1by1.png',
@@ -183,9 +183,9 @@ export const programs = [
       ]
    },
    {
-      title: "JS 'blockblast'",
+      title: "JS blockblast",
       description: "My blockblast clone built using the javascript visual library p5",
-      meta: 'Javascript-P5.JS',
+      meta: 'Javascript-P5.JS 2025',
       page: '/code/jsblockblast',
       ref: 'jsbb2025',
       mediaLink: 'codepage/jsb1by1.png',
@@ -203,7 +203,7 @@ export const programs = [
    {
       title: 'Turning Cubes JS',
       description: 'What I consider my first real Javascript project is a generative animation of tiled rhombi that rotate to give the illusion of a morphing topology',
-      meta: 'Javascript-P5.JS',
+      meta: 'Javascript-P5.JS 2025',
       page: '/code/turningcubes',
       ref: 'turningcubejs',
       mediaLink: 'codepage/tc1by1.png',
@@ -221,7 +221,7 @@ export const programs = [
    {
       title: 'My Portfolio',
       description: "Including this website and another I never really finished ive made about 3 portfolios showcasing my work. I go back and redo it because every time I feel like I can make it better, and its a fun project where I get to look back on what I've done",
-      meta: 'Typescript-React',
+      meta: 'Typescript-React 2025',
       page: '/code/portfolio',
       ref: 'ptflio2025',
       mediaLink: 'codepage/port1by1.png',

@@ -58,7 +58,7 @@ function CodeComponent(props: props) {
                display: "flex",
                backgroundColor: colorMode ? "black" : "white",
                border: "none",
-               borderLeft: `solid 8px ${colorMode ? palDark[4] : palLight[4]}`,
+               borderLeft: `solid 8px ${colorMode ? palDark[4] : palLight[2]}`,
                boxShadow: bs,
 
             }}

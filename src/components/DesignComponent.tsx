@@ -38,7 +38,7 @@ function DesignComponent(props: design) {
                marginBottom: "48px",
                flexDirection: "column",
                padding: "8px",
-               borderTop: colorMode ? `solid 8px ${palDark[4]}` : `solid 8px ${palLight[4]}`,
+               borderTop: colorMode ? `solid 8px ${palDark[3]}` : `solid 8px ${palLight[3]}`,
             }}
          >
             <div
@@ -151,7 +151,7 @@ function DesignComponent(props: design) {
                marginBottom: "48px",
                flexDirection: "column",
                padding: "8px",
-               borderTop: colorMode ? `solid 8px ${palDark[4]}` : `solid 8px ${palLight[4]}`,
+               borderTop: colorMode ? `solid 8px ${palDark[3]}` : `solid 8px ${palLight[3]}`,
             }}
          >
             <div
@@ -256,7 +256,7 @@ function DesignComponent(props: design) {
                marginBottom: "48px",
                flexDirection: "column",
                padding: "8px",
-               borderTop: colorMode ? `solid 8px ${palDark[4]}` : `solid 8px ${palLight[4]}`,
+               borderTop: colorMode ? `solid 8px ${palDark[3]}` : `solid 8px ${palLight[3]}`,
             }}
          >
             <div

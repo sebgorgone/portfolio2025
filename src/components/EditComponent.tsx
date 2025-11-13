@@ -32,7 +32,7 @@ function EditComponent(props: edit) {
                marginBottom: "48px",
                flexDirection: "column",
                padding: "8px",
-               borderTop: colorMode ? `solid 8px ${palDark[4]}` : `solid 8px ${palLight[4]}`,
+               borderTop: `solid 8px ${palLight[4]}`,
             }}
          >
             <div

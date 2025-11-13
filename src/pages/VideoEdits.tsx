@@ -69,7 +69,7 @@ function VideoEdits() {
                   justifyContent: "space-between",
                   padding: "8px",
                   marginBottom: "16px",
-                  borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[2]}`
+                  borderTop: `solid 4px ${palLight[4]}`
                }}
             >
                <h3

@@ -48,7 +48,7 @@ function CodePage() {
                      justifyContent: "space-between",
                      padding: "8px",
                      marginBottom: "16px",
-                     borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[2]}`
+                     borderTop: `solid 4px ${colorMode ? palDark[4] : palLight[2]}`
                   }}
                   >
                      <h3
@@ -200,14 +200,14 @@ function CodePage() {
                            boxShadow: bs
                         }}
                      >
-                        I have been programming for almost 2 years as of November 2025. I began learning python my freshman year of college, however I failed to grasp the underlying concept of programming then. About a year later I started learning Javascript as a means to create digital art for a course I was taking. Since then Ive gotten very into web development as a whole using everything from node js, express, websockets, nginx, react, structured query language, basically as many aspects of web development as I can in that time. Ive spent much time deploying a number of full stack application using AWS such as a skydiving logbook CRUD app I made over the last summer, and a project Im working on now (november 2025) for a social app for a local T-shirt buisness.(github link on my about page and at the bottom of the page)   
+                        I have been programming for almost 2 years as of November 2025. I began learning python my freshman year of college, however I failed to grasp the underlying concept of programming then. About a year later I started learning Javascript as a means to create digital art for a course I was taking. Since then Ive gotten very into web development as a whole using everything from node js, express, websockets, nginx, react, structured query language, basically as many aspects of web development as I can in that time. Ive spent much time deploying a number of full stack application using AWS such as a skydiving logbook CRUD app I made over the last summer. A project Im working on now (november 2025) is a social app for a local T-shirt buisness.(github link on my about page and at the bottom of the page)   
                      </div>
 
 
                      <div
                         style={{
                            display: "flex",
-                           width: "60%",
+                           width: "80%",
                            flexDirection: "column",
                            alignItems: "center",
                            padding: "8px",

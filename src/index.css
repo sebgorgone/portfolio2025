@@ -135,3 +135,13 @@ button {
   opacity: 70%;
   box-sizing: border-box;
 }
+
+.navButton h3.buttonTitle {
+  max-height: 0px;
+  opacity: 0;
+}
+
+.navButton:hover h3.buttonTitle{
+  max-height: 8px;
+  opacity: 100;
+}
