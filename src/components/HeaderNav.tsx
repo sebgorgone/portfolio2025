@@ -4,12 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { programs, designs, edits } from "../context/useContent";
 
-type ProjectType = {
-   title: string,
-   description: string,
-   meta: string,
-}
-
 type ResultType = {
    title: string[],
    description: string[] | null

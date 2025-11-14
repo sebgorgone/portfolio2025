@@ -69,6 +69,8 @@ export const edits = [
 
 ];
 
+//media type image | landscape | ''(empty string for multiple peices of media)
+
 export const designs = [
    {
       title: 'illustrator final project',
@@ -130,6 +132,14 @@ export const designs = [
    }
 
 ];
+
+//upload 1by1 image to public/codepage.
+//related images go in public/{project name}
+//append new programs object
+//create new array of formated text for the project article
+//create a new route for the project in main analagous to the page key in the programs array ex: /code/ibn
+
+
 
 export const programs = [
    {
@@ -237,4 +247,111 @@ export const programs = [
       ]
    },
    
-]
+];
+
+   // 0 = text-body 
+   // 1 = landscape-left 
+   // 2 = landscape-right 
+   // 3 = portrait-left 
+   // 4 = portrait-right 
+   // 5 = portrait-iframe(left)+text 
+   // 6 = landscape-iframe 
+   // 7 = image-landscape 
+   // 8 = card-layout (seperate paths with -) the background for this is black
+
+export const invitedByNat = [
+   {
+      format: 0,
+      src: '',
+      text: 'Invited By Nat is a react web app I have been building for a few months now. It is a fullstack web application complete with a community forum- using socket.io. It also has social media style posting for the owners of Invited to post to their customers. Within this project I built a fully custom calendar view for their event postings, as well as full create, update, and delete capabilities via the admin dashboard. It is structured with segmented access to consolidate users, admins, and super-users. Allows for admins to act as moderators of the public community chat forum, as well as revoke and grant access to all users via the user control dashboard.'
+   },
+   {
+      format: 2,
+      src: 'codepage/invited/ibn-landscape.png',
+      text: 'The app is designed with exclsivity in mind, which led me to developing the authorization and validation process first. The app allows admins to seamlessly segment access to each individual user in a clean GUI'
+   },
+   {
+      format: 3,
+      src: 'codepage/invited/ibn-portrait.png',
+      text: 'The app is going to ship fully with the admin Dashboard, the landing page welcoming new users to sign up for the application, and the user application wich allows validated users to interact with their community. It also gives them a one stop expirience for posts, events, and new products right as they come out.'
+   },
+   {
+      format: 7,
+      src: 'codepage/invited/ibn-cal.png',
+      text: '',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Authentication is all driven by JWTs that are encrypted via RSA and encode all of the users metadata. all external data is stored within a mySQL. Files are served seperately from an s3 bucket. Secure temporary URLs for s3 are assigned from the node server and all images and videos are uploaded directly to s3 from the client; circumventing the need for the backend server to handle files and s3 storage. All of the traffic is routed through a reverse proxy, and directs traffic to either the api or the websockets based on the endpoint the client is trying to reach. The app is projected to be launched by then end of the year 2025',
+   },
+   {
+      format: 6,
+      src: 'https://invitedbynat.live',
+      text: ''
+   },
+   
+];
+
+export const tasskManagement = [
+   {
+      format: 0,
+      src: '',
+      text: 'Tassk Management is my to do application built in react. It is a standalone frontend that uses your browsers local storage to store multiple todolists in a single JSON document format similar to a document database. The name comes from a toy sloth that I have named molasses (Ass) and he is also the mascot on the application. I have made a handful of these to do apps, but this one is my all time favorite for its organization and versatility alone. I use it all the time to organize everything from my day to day tasks, to individual steps in a procedure, to segmenting work for my classes. Most of all I love it because of how persoanl it is to me!',
+   },
+   {
+      format: 1,
+      src: 'codepage/tassk-management/tm-tasks.png',
+      text: 'The page tiles tasks in columns that scroll indipendently, and you can open and close tabs like you would in your browser. Depending on the pixel width of your browser it limits the number of widows you can have open at a given time.'
+   },
+   {
+      format: 2,
+      src: 'codepage/tassk-management/tm-pal.png',
+      text: 'You can customize your tasks with custom pallettes and by favoriting them. Favoriting tasks gives them the ass icon in the file explorer and in the tab header. All customization and input is crud enabled. That includes the task group title, description, and pallettes.'
+   },
+   {
+      format: 7,
+      src: 'codepage/tassk-management/tm-task.png',
+      text: ''
+   }
+];
+
+export const cloudlog = [
+   {
+      format: 0,
+      src: '',
+      text: 'Cloudlog is the application I built over the summer of 2025 to learn the react framework. It started as a simple UI build to mess around, but it evolved into me signing up for aws, learning node and express, learning SQL, and hosting all of that data in the cloud. The app itself was a skydiving logbook app for jumpers (myself pretty much) to log their skydives and track statistics such as total freefall time, total jumps, total anything via the tag function I built out extensively. There was also stats by year, by week, by month. Progress bars for different milestone progressions. And so much more that I baked into this frontend from just a hosted node app and database that stored nothing but your user ID and your jumps.',
+   },
+   {
+      format: 1,
+      src: 'codepage/cloudlog/cl1.png',
+      text: 'Logbooks are a staple in skydiving; serving as the source of truth of your skydiving expirience and knowledge. I wanted this app to make auditing and skimming through your jumps and notes alot easier. And most of all a one-page view of your all time stats.'
+   },
+   {
+      format: 2,
+      src: 'codepage/cloudlog/cl3.png',
+      text: ''
+   },
+   {
+      format: 1,
+      src: 'codepage/cloudlog/cl5.png',
+      text: ''
+   },
+   {
+      format: 2,
+      src: 'codepage/cloudlog/cl7.png',
+      text: '',
+   },
+   {
+      format: 8,
+      src: 'codepage/cloudlog/svg/cloudlog404white.svg-codepage/cloudlog/svg/cloudlogiconwhite.svg',
+      text: 'I did alot of design work for this app as well. Mostly SVGs for the icons, and the banners, etc. My favorite is still the cutaway outline svg for the nopage 404.'
+   }
+
+];
+
+
+
+
+
+
