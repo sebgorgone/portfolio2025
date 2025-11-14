@@ -249,6 +249,12 @@ export const programs = [
    
 ];
 
+type Widget = {
+   format: number,
+   src: string,
+   text: string
+};
+
    // 0 = text-body 
    // 1 = landscape-left 
    // 2 = landscape-right 
@@ -257,9 +263,10 @@ export const programs = [
    // 5 = portrait-iframe(left)+text 
    // 6 = landscape-iframe 
    // 7 = image-landscape 
-   // 8 = card-layout (seperate paths with -) the background for this is black
+   // 8 = header (aligned left)
+   // 9 = link input (text = link title src=linkUrl seperate multiple links with ' - ')
 
-export const invitedByNat = [
+export const invitedByNat: Widget[] = [
    {
       format: 0,
       src: '',
@@ -293,7 +300,7 @@ export const invitedByNat = [
    
 ];
 
-export const tasskManagement = [
+export const tasskManagement: Widget[] = [
    {
       format: 0,
       src: '',
@@ -321,7 +328,7 @@ export const tasskManagement = [
    }
 ];
 
-export const cloudlog = [
+export const cloudlog: Widget[] = [
    {
       format: 0,
       src: '',
@@ -333,24 +340,242 @@ export const cloudlog = [
       text: 'Logbooks are a staple in skydiving; serving as the source of truth of your skydiving expirience and knowledge. I wanted this app to make auditing and skimming through your jumps and notes alot easier. And most of all a one-page view of your all time stats.'
    },
    {
-      format: 2,
+      format: 7,
       src: 'codepage/cloudlog/cl3.png',
       text: ''
    },
    {
-      format: 1,
+      format: 7,
       src: 'codepage/cloudlog/cl5.png',
       text: ''
    },
    {
-      format: 2,
+      format: 7,
       src: 'codepage/cloudlog/cl7.png',
       text: '',
    },
    {
+      format: 0,
+      src: '',
+      text: 'This rendition of the app is meant to work with the local storage in the browser for display. The original app was hosted fully on AWS. I used AWS Amplify for the frontend, lambda functions for the backend, and an ec2 instance for the mysql database. Im still in the process of converting the api endpoints to store data in local caches. Check out the frontend published with github pages, or the original fullstack project'
+   },
+   {
+      format: 6,
+      src: 'https://sebgorgone.github.io/cloudlog-local',
+      text: ''
+   },
+
+];
+
+export const jsBlockblast: Widget[] = [
+   {
+      format: 5,
+      src: 'https://sebgorgone.github.io/js-blockblast/',
+      text: 'JS blockblast was a javascript project I made for fun over the summer of 2025. It uses the P5.js javascript library to render all of the things on screen. I did my best to map the scoring to the original blockblast. The score is stored within the browsers local storage. P5 uses an event loop to render content on the screen. It has a setup to initialize any code you want to run previous to the loop and it is rendered in a canvas object in the DOM. The loop in this project run through a laundry list of checks to see if a row is complete and if there needs to be new items in the \'tray\'. The scroging is event based- it triggers any time a new row is cleared, and on every loop the code checks the current blocks you have against the board to see if there are still valid placed and when that number of valid placements gets to zero the game ends and your score is saved.'
+   },
+];
+
+export const turningCubes: Widget[] = [
+   {
+      format: 0,
+      src: '',
+      text: 'I would label this as my first real javascript project. I made this after using p5 to learn javascript, and turned it in for a visual programming final project. Theres alot going on in this project and some interactivity mainly serving as debug methods for myself. They do give alot of good insight on how the algorithm is running.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'This project was insipired by a 3blue1brown video on solving puzzles using higher order dimensional reperesentations of them. More info on that in the design process below the frame.'
+   },
+   {
+      format: 9,
+      src: 'https://www.youtube.com/watch?v=piJkuavhV50&list=WL&index=3',
+      text: '3blue1brown youtube video',
+   },
+   {
+      format: 6,
+      src: 'https://sebgorgone.github.io/3d-cube-visual-p5js/',
+      text: ''
+
+   },
+   {
+      format: 2,
+      src: 'codepage/turningcubes/codeexplain.png',
+      text: '*Key Binds* \n debug HUD: b \n conditional filtering: v \n modes (0-4): 0, 1, 2, 3, 4'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'This code base is 1 javascript document and an html index that sources it. Over the course of about 2 and a half months I made this with the goal of turning it in as a digital art project. In turn the code has alot of conditional logic to test different variations of how it is working. Wich is where the mode variable came from.'
+   },
+   {
       format: 8,
-      src: 'codepage/cloudlog/svg/cloudlog404white.svg-codepage/cloudlog/svg/cloudlogiconwhite.svg',
-      text: 'I did alot of design work for this app as well. Mostly SVGs for the icons, and the banners, etc. My favorite is still the cutaway outline svg for the nopage 404.'
+      src: '',
+      text: 'B : Debug HUD'
+   },
+   {
+      format: 7,
+      src: 'codepage/turningcubes/debug.png',
+      text: ''
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'The debug hud overlays the mode, displays when conditional filtering is on, shows when rhombi polarities are fliped to make a tranformation, shows a stress meter for debugging what my scale limit was, displays how many valid cubes are on screen as well as the polarities of the cube it is iterating over. I go more in depth on the polaraties of the rhombi in the design process below, but they were the biggest hurdle for making this program work as well as integral for some of the conditional logic i would implent after I had achieved a working design. The lines in the debug overlay reperesent polarity, and the dots are valid cubes. The last thing is conditional slip- which works globally to halt conditional filtering periodically.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'V : Conditional Filtering'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Conditional filtering was some extra logic I started to mess with later on in the project to try and nudge the algorithm to build \'bigger\' cubes. It works by checking if the polarities are all aligned either toward the center or away from the center and only turns thoes cubes. The result is the grid starts to arrange itself into big shelfs and walls, but as this goes on less and less valid cubes exist and in turn the animation slows down. Thats where the conditional slip comes in. Conditional slips allows the algorithm to break this rule periodically often triggering a cascade effect of transformations and helps further push the algorithm to morph the grid. The debug view realy helps to visualize how the polarities affect this outcome, because youll see that the cubes with common polarities will cascade towards a single corner.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Mode 0 : Random Cube Flipping',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Begins from the start of initialized rhombus array, and checks for valid cubes to turn. Increments by 1 The same algorith as mode 1'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Mode 1 : Sequential cube flipping (Decrementing by 4)',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Using the array of all of the indivudual rhombi on screen. This mode iterates in the negative direction over the rhombus object array by decrements of 4. If the selected rhombus can be flipped (builds a cube) it is flipped. The array is ordered based on the order the rhombi are initialized in.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Mode 2 : Sequential cube flipping (Incrementing by 1)',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Begins from the start of initialized rhombus array, and checks for valid cubes to turn. Increments by 1- Uses the same flip validation algorithm as mode 1.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Mode 3 : Periodically toggles conditional filtering',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'This is Mode 2 with 30 seconds of conditional flipping and 30 seconds of normal flipping.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Mode 4 : Do it yourself',
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Quit relying on computers to do everything for you. Making this one felt like cheating - no algorithm, no iteration, no fun. It is relaxing though.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'The Design Process'
+   },
+   {
+      format: 2,
+      src: 'codepage/turningcubes/3b1b.png',
+      text: 'In january of 2025 I was given a due date to hand in a final project proposal for some kind of digital art piece in a class where we were working with javascript (the p5.js library). Coincidentaly I had come across this 3blue1brown video where he has this animation of rhombus tiles that spin and morph into a 3d like structure.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'His video is super interesting and goes into way more that just how and why this geometric pattern works, but I was instantly grabbed by this mesmorizing animation and thought I could absolutely acheive a generative version of this.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'I had thought starting out that the easiest way to get to where I was going was to come up with a way to iteratively create these cubes with the corect angles. Wich definetly took alot of trial, error, and math.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'I decided it was easiest build the cubes one rhombus at a time as they were meant to be able to move around the screen as they flipped. So it started with three rhombi being drawn from a central point all offset 120 degrees from eachother to form the cube.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'From there I got the grid to fill by iteratively placing offset rhombi on the adjacent ends of the initial rhombi from the first cube. This is where the animated initializing period was born from. Its not a bug its a feature!'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Creating the rhombus in this polarity based way where all of the cordinates stem from a common center created alot of challenges for me when trying to get the animation to flip cubes that would form based on previous cube flips. This got me to a point where i could turn the cubes but i could only flip them right back after.'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Geometry and polarity'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'The Rhombi themselves had an x and y coordinate responsible for their position. they also had an angle (theta) to determine thier orientation. In order to create a rhombille grid that "Tile the plane" as 3Blue1Brown puts it. There need to be 3 rhombi that all consist of 2 sets of both 60 and 120 degree inner angles. If three of these ideal rhombi align at a common point at their 120 degree angles, they can be flipped 180 degrees to fit neatly in the grid while shifting their orientations relative to the surrounding grid. This tranformation effectively shifts the perspective of the three rhombi, and is the basis for the visuals in this project.'
+   },
+   {
+      format: 3,
+      src: 'codepage/turningcubes/polarhex.png',
+      text: 'An X and Y would sit at a 120 degree angle of any given rhombus. The rest of the rhombus is built by setting a point at constant distance or radius from that first point in the direction preset for that given rhombus. Then the last two points are places 60 degrees offset left and right of the last point at the same distance from the initial- creating the two 60 degree angles. I did it this way because of how nicely this fits on a unit circle and i couldnt think of another way how.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'I acheived these angles by setting a universal radius value. This is decided based on the longest side in pixels of the viewport. Then by using cartesian cordinate conversions I retrieved the x and y coordinates. \n x = r * cos(angle)\ny = r * sin(angle)'
+   },
+   {
+      format: 0,
+      src: '',
+      text: "At first I 'spawned' three rhombi or one cube, and tried to do the math to make a properly offset gred for them to be iterated over. However, that approach wasnt working out and I ended up getting frustrated at the math. I then had the idea to just build new rhombi off of the inital 3 in a itterative way. With the exit conditions being the viewport edges plus one rhombus 'radius'. This is what lives in the code now. I also made an alternative 'setupMode', where it would build one big cube from the initial. This was a cool concept because it was apart of 3blue1browns puzzle where he would take the grid from that single cube state to a grid state in the shortest amount of transformations. The animation that followed did not necesscarily get moving fast enough having only one valid cube to start with. I would need a different selection algorithm. I didnt end up incorperating a way to interactively change this unfortunately as it requires a restart of the animation and I didnt think it added enough to my original goal."
+   },
+   {
+      format: 7,
+      src: 'codepage/turningcubes/bigcubepic.png',
+      text: ''
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Algorithm'
+   },
+   {
+      format: 0,
+      src: 'codepage/turningcubes/loworderlarge.png',
+      text: 'I struggled here. Once I had gotten the grid geometry down my first instict was to just randomly flip these cubes by adding pi to their rhombi\'s theta angles. This would give the effect of shifting gemoterys and perspective, but it was limited. The flips would only move the cube once, but any new cubes that formed would never be touched. The result being the same cubes just flipping back and forth and at best making zigzag patterns out of the rhombi. Not close to the big shelves and walls I was looking for in a truley generative design.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'You can see how in this example the random cube flipping does change the grid but over time will keep its stairstep and zigzag like structure. The main reason again was the polarity. It was simple to rotate the cubes around the axis they were built on. But when you had a cube that formed with diferent x and y cordinates- trying to come up with a way to systematically translate thoes rhombi to their new correct location became difficult. So I dumped the idea of going based on the cubes with common center points because that was doomed to fail.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Then i did it the hard way. Instead of making an array of the cubes that get formed with common center points (initial 120 degree angles), and iterating over it to flip cubes, I iterated over every rhombus. The process goes like this- The algorithm checks every rhombus for valid cubes to flip. It does this by checking if 3 rhombi sit together to make a cube. Then a random rhombus from that subset of valid cubes is chosen to be evaluated. The algorith checks the other rhombi on the grid for shared x and y cordinates with the given rhombus. It does this for both 120 degree angle verticies. If during this process and either one of the angles its checking finds two other matches it then proceeds with the flip process. This starts with checking the polarity of each rhombus compared to the inital one. if they all line up already, then they rotate. If they dont, the algorithm flips the rhombi that arent flipped to be pointing outward from the center so that they all share a common x,y. Then the flip happens. And the algorithm repeats checking the board for valid cubes once again as this state is volitle across transformation.'
+   },
+   {
+      format: 4,
+      src: 'codepage/turningcubes/highorder.png',
+      text: 'This ened up being what I stuck with. Its clunky and slow, and worst of all, I have to limit how many cubes it wants to throw on screen. But its what I wanted and how I wanted it. It achieves the generative part, solves the polarity problem, and allows for some cool conditional things to happen based on how thoes cubes are positioned.'
+   },
+   {
+      format: 9,
+      src: 'https://sebgorgone.github.io/3d-cube-visual-p5js - https://github.com/sebgorgone/Sebastian-Gorgone-Portfolio',
+      text: 'turning cubes - turning cubes github repo'
    }
 
 ];

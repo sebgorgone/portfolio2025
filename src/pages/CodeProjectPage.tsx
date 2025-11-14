@@ -21,6 +21,19 @@ function CodeProjectPage(props: Props) {
    const { title, content } = props;
 
    function renderComponent(inp: Widget) {
+
+      const renderWithBreaks = (input: string) => {
+         const lines = input.split("\n");
+
+         return lines.map((line, index) => (
+            <p key={index}>
+               {line}
+               {index < lines.length - 1 && <br />}
+            </p>
+         ));
+      };
+
+
       // text body
       if (inp.format === 0) {
          return (
@@ -36,7 +49,7 @@ function CodeProjectPage(props: Props) {
                   color: colorMode ? palDark[2] : 'black'
                }}
             >
-               {inp.text}
+               {inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}
             </div>
          )
       }
@@ -70,7 +83,7 @@ function CodeProjectPage(props: Props) {
 
             <p
                style={{ width: "30%" }}
-            >{inp.text}</p>
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
       }
@@ -96,7 +109,7 @@ function CodeProjectPage(props: Props) {
 
             <p
                style={{ width: "30%" }}
-            >{inp.text}</p>
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
             <img
                style={{
@@ -143,7 +156,7 @@ function CodeProjectPage(props: Props) {
 
             <p
                style={{ width: "60%" }}
-            >{inp.text}</p>
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
       }
@@ -170,7 +183,7 @@ function CodeProjectPage(props: Props) {
 
             <p
                style={{ width: "60%" }}
-            >{inp.text}</p>
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
             <img
                style={{
@@ -207,6 +220,8 @@ function CodeProjectPage(props: Props) {
             <iframe
                style={{
                   width: '30%',
+                  height: 'calc( (100vw * .9) * (.3) * 2)',
+                  maxHeight: 'calc( (1440px * .9) * (.3) * 2)',
                   borderRadius: "8px",
                   boxShadow: bs,
                   border: "none"
@@ -216,7 +231,7 @@ function CodeProjectPage(props: Props) {
 
             <p
                style={{ width: "60%" }}
-            >{inp.text}</p>
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
       }
@@ -281,42 +296,72 @@ function CodeProjectPage(props: Props) {
          </div>)
       }
 
+      // header centered
       if (inp.format === 8) {
-         const paths = inp.src.split('-')
          return (
             <div
                style={{
                   width: "90%",
                   maxWidth: "1440px",
                   padding: "16px",
-                  fontFamily: 'body',
-                  fontSize: "32px",
+                  fontFamily: 'subheader',
+                  fontSize: "48px",
                   textAlign: 'center',
-                  backgroundColor: "black",
-                  color: 'white',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? 'white' : palLight[5],
                   display: 'flex',
-                  justifyContent: 'center',
-                  gap: "16px",
-                  flexWrap: 'wrap'
+                  justifyContent: 'flex-start',
                }}
             >
-               {inp.text !== '' &&
-                  <div style={{width: "90%", display: 'flex', textAlign: 'center'}}>
-                     {inp.text}
-                  </div>}
-               {paths.map((p, i) => (
-                   <img 
-                     style={{
-                        width: "30%",
-                        borderRadius: '4px',
-                     }}
-                     src={p}
-                     key={i}
-                     alt='Your browser doesnt not support viewing images'
-                  />
-               ))}
+
+               {inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}
+
             </div>
          );
+      }
+
+      //link render
+      if (inp.format === 9) {
+         if (inp.src.includes(' - ') && inp.text.includes(' - ')) {
+            const links = inp.src.split(' - ');
+            const titles = inp.text.split(' - ');
+            return ( 
+               <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'subheader',
+                  fontSize: "24px",
+                  textAlign: 'center',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? 'white' : palLight[5],
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  flexDirection: 'column'
+               }}
+            >{links.map((l, i) => (
+               <a target='_blank' href={l} key={i}>{titles[i]}</a>
+            ))}</div>
+            )
+         }
+
+         return ( 
+               <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'subheader',
+                  fontSize: "24px",
+                  textAlign: 'center',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? 'white' : palLight[5],
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  flexDirection: 'column'
+               }}
+            ><a target='_blank' href={inp.src}>{inp.text}</a></div>)
       }
 
    }
@@ -358,25 +403,26 @@ function CodeProjectPage(props: Props) {
                   {/* headertitle v*/}
                   <div
                      style={{
+                        position: "relative",
                         display: "flex",
                         height: "200px",
                         width: "100%",
-                        justifyContent: "center"
+                        justifyContent: "center",
                      }}
                   >
                      {/* overlayed text */}
                      <div
                         style={{
-                           position: "relative",
-                           top: "35%",
-                           left: "38%",
+                           position: "absolute",
+                           top: "50%",
+                           left: "50%",
+                           transform: "translate(-50%, -50%)",
                            color: !colorMode ? palLight[3] : palDark[0],
                            fontSize: "48px",
                            fontWeight: 600,
                            textAlign: "center",
                            zIndex: 2,
                            fontFamily: "title",
-                           width: 0,
                            whiteSpace: "nowrap"
                         }}
                      >
