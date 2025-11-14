@@ -313,6 +313,11 @@ export const tasskManagement = [
       format: 7,
       src: 'codepage/tassk-management/tm-task.png',
       text: ''
+   },
+   {
+      format: 6,
+      src: 'https://sebgorgone.github.io/Tassk-Management',
+      text:''
    }
 ];
 
