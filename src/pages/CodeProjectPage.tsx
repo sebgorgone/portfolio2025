@@ -396,7 +396,6 @@ function CodeProjectPage(props: Props) {
                      flex: 1,
                      overflowY: "auto",
                      height: "100%",
-                     scrollbarGutter: "stable",
                   }}
                >
 
