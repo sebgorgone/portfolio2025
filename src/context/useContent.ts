@@ -176,7 +176,7 @@ export const programs = [
    },
    {
       title: 'Cloud Log',
-      description: 'My Fullstack web app for skydivers to track their jumps and keep statistics and records. The hosted version is a local Version I converted to work within the local storage of your browser.',
+      description: 'My Fullstack web app for skydivers to track their jumps and keep statistics and records. The hosted version is a local version I converted to work within the local storage of your browser.',
       meta: 'Javascript-React-NodeJS-ExpressJS-AWS-mySQL 2025',
       page: '/code/cloudlog',
       ref: 'cloudlog2025',
@@ -390,6 +390,11 @@ export const turningCubes: Widget[] = [
       format: 9,
       src: 'https://www.youtube.com/watch?v=piJkuavhV50&list=WL&index=3',
       text: '3blue1brown youtube video',
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'Click the animation to use the keybinds'
    },
    {
       format: 6,

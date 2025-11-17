@@ -387,15 +387,18 @@ function HeaderNav() {
                      style={{
                         width: '100%',
                         background: colorMode ? palDark[1] : palLight[1],
-                        color: colorMode ? palDark[0] : palLight[5],
+                        color: colorMode ? palDark[0] : 'black',
                         fontFamily: 'body',
-                        padding: '4px',
+                        padding: '8px',
                         borderRadius: '4px',
                         textAlign: 'left',
                         border: 'none'
 
                      }}
                      key={i}
+                     type='button'
+                     onClick={() => { falseSB(); nav(r.location)}}
+                     className='resultButton'
                   >
 
                      <h3>
@@ -403,7 +406,7 @@ function HeaderNav() {
                         <span
                            style={{
                               fontFamily: 'subHeader',
-                              color: colorMode ? palDark[2] : palLight[4]
+                              color: colorMode ? palDark[2] : palLight[5]
                            }}
                         >{r.title[1]}</span>
                         {r.title[2]}
@@ -411,14 +414,14 @@ function HeaderNav() {
 
                      {r.description && 
                      <p>
-                        {r.description[0].length > 10 ? `...${r.description[0].slice(r.description[0].length - 10)}` : r.description[0]}
+                        {r.description[0].length > 15 ? `...${r.description[0].slice(r.description[0].length - 15)}` : r.description[0]}
                         <span
                            style={{
                               fontFamily: 'subHeader',
-                              color: colorMode ? palDark[2] : palLight[4]
+                              color: colorMode ? palDark[2] : palLight[5]
                            }}
                         >{r.description[1]}</span>
-                        {r.description[2].length > 25 ? `${r.description[2].slice(0, 25)}...` : r.description[2]}
+                        {r.description[2].length > 30 ? `${r.description[2].slice(0, 30)}...` : r.description[2]}
                      </p>}
 
                   </button>
