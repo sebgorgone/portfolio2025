@@ -6,7 +6,8 @@ import { programs, designs, edits } from "../context/useContent";
 
 type ResultType = {
    title: string[],
-   description: string[] | null
+   description: string[] | null,
+   location: string
 }
 
 function HeaderNav() {
@@ -38,8 +39,6 @@ function HeaderNav() {
          document.removeEventListener('mousedown', handleClickOutside);
       };
    }, [searchResults]);
-
-   console.log(searchResults);
 
    const headerStyle: CSSProperties = {
       width: "100%",
@@ -374,11 +373,58 @@ function HeaderNav() {
                   top: 126,
                   width: "400px",
                   zIndex: 8,
-                  height: "300px",
-                  background: colorMode ? palDark[0] : "white",
+                  background: colorMode ? palDark[5] : "white",
                   boxShadow: bs,
+                  padding:"8px",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "8px"
                }}
-            ></div>
+            >
+
+               {searchResults.map((r, i) => (
+                  <button
+                     style={{
+                        width: '100%',
+                        background: colorMode ? palDark[1] : palLight[1],
+                        color: colorMode ? palDark[0] : palLight[5],
+                        fontFamily: 'body',
+                        padding: '4px',
+                        borderRadius: '4px',
+                        textAlign: 'left',
+                        border: 'none'
+
+                     }}
+                     key={i}
+                  >
+
+                     <h3>
+                        {r.title[0]}
+                        <span
+                           style={{
+                              fontFamily: 'subHeader',
+                              color: colorMode ? palDark[2] : palLight[4]
+                           }}
+                        >{r.title[1]}</span>
+                        {r.title[2]}
+                     </h3>
+
+                     {r.description && 
+                     <p>
+                        {r.description[0].length > 10 ? `...${r.description[0].slice(r.description[0].length - 10)}` : r.description[0]}
+                        <span
+                           style={{
+                              fontFamily: 'subHeader',
+                              color: colorMode ? palDark[2] : palLight[4]
+                           }}
+                        >{r.description[1]}</span>
+                        {r.description[2].length > 25 ? `${r.description[2].slice(0, 25)}...` : r.description[2]}
+                     </p>}
+
+                  </button>
+               ))}
+
+            </div>
          </>
       )
 
@@ -445,7 +491,8 @@ function HeaderNav() {
          if (normMeta.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.meta, wildCard)
+               description: splitToArray(p.meta, wildCard),
+               location: `/code#${p.ref}`
             });
             continue;
          }
@@ -453,7 +500,8 @@ function HeaderNav() {
          if (normDescription.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.description, wildCard)
+               description: splitToArray(p.description, wildCard),
+               location: `/code#${p.ref}`
             });
             continue;
          }
@@ -461,7 +509,8 @@ function HeaderNav() {
          if (normTitle.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: null
+               description: null,
+               location: `/code#${p.ref}`
             });
          }
       }
@@ -474,7 +523,8 @@ function HeaderNav() {
          if (normMeta.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.meta, wildCard)
+               description: splitToArray(p.meta, wildCard),
+               location: `/design#${p.ref}`
             });
             continue;
          }
@@ -482,7 +532,8 @@ function HeaderNav() {
          if (normDescription.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.description, wildCard)
+               description: splitToArray(p.description, wildCard),
+               location: `/design#${p.ref}`
             });
             continue;
          }
@@ -490,7 +541,8 @@ function HeaderNav() {
          if (normTitle.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: null
+               description: null,
+               location: `/design#${p.ref}`
             });
          }
       }
@@ -503,7 +555,8 @@ function HeaderNav() {
          if (normMeta.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.meta, wildCard)
+               description: splitToArray(p.meta, wildCard),
+               location: `/edits#${p.ref}`
             });
             continue;
          }
@@ -511,7 +564,8 @@ function HeaderNav() {
          if (normDescription.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: splitToArray(p.description, wildCard)
+               description: splitToArray(p.description, wildCard),
+               location: `/edits#${p.ref}`
             });
             continue;
          }
@@ -519,7 +573,8 @@ function HeaderNav() {
          if (normTitle.includes(normWild)) {
             pool.push({
                title: splitToArray(p.title, wildCard),
-               description: null
+               description: null,
+               location: `/edits#${p.ref}`
             });
          }
       }
