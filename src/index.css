@@ -68,22 +68,22 @@ input:checked + .slider:before {
 
 @font-face {
    font-family: title;
-   src: url(../bvp/BeVietnamPro-Black.ttf);
+   src: url(/bvp/BeVietnamPro-Black.ttf);
 }
 
 @font-face {
    font-family: subHeader;
-   src: url(../bvp/BeVietnamPro-Bold.ttf);
+   src: url(/bvp/BeVietnamPro-Bold.ttf);
 }
 
 @font-face {
    font-family: body;
-   src: url(../bvp/BeVietnamPro-Regular.ttf);
+   src: url(/bvp/BeVietnamPro-Regular.ttf);
 }
 
 @font-face {
    font-family: subtext;
-   src: url(../bvp/BeVietnamPro-LightItalic.ttf);
+   src: url(/bvp/BeVietnamPro-LightItalic.ttf);
 }
 
 .navButton {
