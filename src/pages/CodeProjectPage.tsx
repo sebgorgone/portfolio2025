@@ -445,7 +445,7 @@ function CodeProjectPage(props: Props) {
 
                   {/* conent area v*/}
 
-                  <div
+                  <article
                      style={{
                         alignItems: 'center',
                         display: "flex",
@@ -457,7 +457,7 @@ function CodeProjectPage(props: Props) {
                   >
                      {content.map(i => renderComponent(i))}
 
-                  </div>
+                  </article>
 
                   {/* conent area ^*/}
 

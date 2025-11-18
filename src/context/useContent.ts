@@ -157,6 +157,20 @@ export const programs = [
       ]
    },
    {
+      title: 'GIBS api User Interface',
+      description: "A small project that uses the GIBS satellite imaging database api. It sets variables within a uri that changes the zoom, position, and date of the images its pulling from.",
+      meta: 'Typescript-React 2025',
+      page: '/code/gibs',
+      ref: 'gibsui2025',
+      mediaLink: `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/${new Date().toISOString().split('T')[0]}/GoogleMapsCompatible_Level9/0/0/0.jpg`,
+      referenceLinks: [
+         {
+            title: 'GIBS api docs',
+            url: 'https://nasa-gibs.github.io/gibs-api-docs/',
+         },
+      ]
+   },
+   {
       title: 'Tassk Management',
       description: 'A local storage based to do app with JSON based storage of multiple to do lists.',
       meta: 'Javascript-React 2025',
