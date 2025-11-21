@@ -2,7 +2,9 @@ import { useColorMode } from "./context/ColorModeContext";
 import { useViewportSize } from "./context/useViewport";
 import { useNavigate } from "react-router-dom";
 import HeaderNav from "./components/HeaderNav";
-import SideBarNav from './components/SideBarNav'
+import SideBarNav from './components/SideBarNav';
+import Footer from "./components/Footer";
+import MobileNav from "./mobileComponents/mobileNav";
 
 
 function Home() {
@@ -651,6 +653,90 @@ function Home() {
             </div>
             {/* three pages preview ^*/}
 
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontFamily: 'body',
+                flexDirection: "column",
+                gap: "32px",
+                margin: '16px',
+                color: colorMode ? palDark[2] : palLight[5],
+              }}
+            >
+              <h1
+                style={{
+                  fontFamily: 'title',
+                  color: colorMode ? palDark[0] : 'black' 
+                }}
+              >About me</h1>
+
+              <p
+                style={{
+                  width: "60%",
+                  textAlign: 'center',
+                  fontSize: "30"
+                }}>
+                My name is Sebastian! I am an undergraduate student at The University of Connecticut. I am studying Digital Media and Design, and im interested in UX/UI design and web development.
+              </p>
+
+              <p
+                style={{
+                  width: "40%",
+                  textAlign: 'center',
+                  fontSize: "30"
+                }}>
+                  I like to ski, I like to skydive, And I love all things software. Occasionally I like to edit videos together for fun of the things I enjoy doing.
+              </p>
+
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                width: "100vw",
+                justifyContent: "center",
+                alignItems: 'center', 
+                gap: "24px",
+                marginBottom: "48px"
+              }}
+            >
+              <img 
+                style={{
+                  borderRadius: "8px",
+                  boxShadow: bs,
+                  width: "28%"
+                }}
+                alt='image of me'
+                src='home/canopy.jpg'
+              />
+
+              <img 
+                style={{
+                  borderRadius: "8px",
+                  boxShadow: bs,
+                  width: '10.4%',
+                }}
+                alt='image of me'
+                src='home/ski.jpg'
+              />
+
+              <img 
+                style={{
+                  borderRadius: "8px",
+                  boxShadow: bs,
+                  width: '25%'
+                }}
+                alt='image of me'
+                src='home/collegiate.jpg'
+              />
+
+            </div>
+
+            <Footer />
+
 
           </div>
           {/* contentbox ^*/}
@@ -661,11 +747,20 @@ function Home() {
     )
   }
 
+  function mobileLayout() {
+    return (
+      <>
+        <MobileNav />
+      </>
+    )
+  }
+
 
   return (
     <>
 
       {deviceType === 'desktop' && desktopLayout()}
+      {deviceType === 'mobile' && mobileLayout()}
 
       {/* background */}
       <div
@@ -675,7 +770,7 @@ function Home() {
           backgroundColor: colorMode ? palDark[1] : palLight[1],
           width: "100vw",
           height: "100vh",
-          top: 0
+          top: 0,
         }}
       ></div>
     </>

@@ -5,6 +5,7 @@ import { designs } from "../context/useContent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
 import DesignComponent from "../components/DesignComponent";
+import Footer from "../components/Footer";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -13,16 +14,16 @@ function DesignPage() {
    const location = useLocation();
 
    useEffect(() => {
-  if (!location.hash) return;
+      if (!location.hash) return;
 
-  const refId = location.hash.replace("#", "");
-  const el = document.getElementById(refId);
-  if (el) {
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 400);
-  }
-}, [location]);
+      const refId = location.hash.replace("#", "");
+      const el = document.getElementById(refId);
+      if (el) {
+         setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+         }, 400);
+      }
+   }, [location]);
 
    const { colorMode, palDark, palLight, bs } = useColorMode();
    const { deviceType } = useViewportSize();
@@ -31,11 +32,11 @@ function DesignPage() {
    const nav = useNavigate();
 
    function renderLinks() {
-   
-         return (
-            designs.map(design => (
-               <button
-               onClick={() => {nav(`/design#${design.ref}`)}}
+
+      return (
+         designs.map(design => (
+            <button
+               onClick={() => { nav(`/design#${design.ref}`) }}
                key={design.ref}
                className='editLinkButton'
                style={{
@@ -50,28 +51,28 @@ function DesignPage() {
                   marginBottom: "16px",
                   borderTop: `solid 4px ${colorMode ? palDark[3] : palLight[3]}`
                }}
+            >
+               <h3
+                  style={{
+                     fontFamily: "subheader",
+                     fontSize: "16px",
+                     color: "white"
+                  }}
                >
-                  <h3
-                     style={{
-                        fontFamily: "subheader",
-                        fontSize: "16px",
-                        color: "white"
-                     }}
-                  >
-                     {design.title}
-                  </h3>
-   
-                  <p
-                     style={{
-                        fontFamily: "subtext",
-                        fontSize: "16px",
-                        color: "white"
-                     }}
-                  >{design.meta}</p>
-   
-               </button>
-            ))
-         )
+                  {design.title}
+               </h3>
+
+               <p
+                  style={{
+                     fontFamily: "subtext",
+                     fontSize: "16px",
+                     color: "white"
+                  }}
+               >{design.meta}</p>
+
+            </button>
+         ))
+      )
    }
 
    function renderDesigns() {
@@ -210,7 +211,7 @@ function DesignPage() {
                   {renderDesigns()}
 
 
-
+                  <Footer />
 
 
                </div>

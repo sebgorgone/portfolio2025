@@ -3,6 +3,7 @@ import { useViewportSize } from "../context/useViewport";
 import SideBarNav from "../components/SideBarNav";
 import HeaderNav from "../components/HeaderNav";
 import { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 
 function GibsPage() {
 
@@ -35,7 +36,7 @@ function GibsPage() {
    }, [z]);
 
    const zoomIn = () => {
-      if (z >= 5) return;
+      if (z >= 6) return;
       const gridSize = Math.pow(2, z);
       const newZ = z + 1;      
       const newSize = Math.pow(2, newZ);
@@ -106,7 +107,7 @@ function GibsPage() {
    function renderGridUI() {
       if (z === 0) return
 
-      const scale = z > 5;
+      const scale = z > 6;
 
       let limitX;
 
@@ -524,6 +525,9 @@ function GibsPage() {
                   </div>
 
                   {/* conent area ^*/}
+
+
+                  <Footer />
 
 
 

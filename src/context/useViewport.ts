@@ -9,7 +9,7 @@ type ViewportSize = {
 
 export function useViewportSize(): ViewportSize {
   function deviceParams() {
-    if (window.innerWidth > 1024) return 'desktop';
+    if (window.innerWidth > 1244) return 'desktop';
     return 'mobile';
   }
 

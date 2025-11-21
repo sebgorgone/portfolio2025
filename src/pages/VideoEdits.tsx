@@ -5,6 +5,7 @@ import { edits } from "../context/useContent";
 import EditComponent from "../components/EditComponent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
+import Footer from "../components/Footer";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -224,7 +225,7 @@ function VideoEdits() {
 
                   {renderEdits()}
 
-
+                  <Footer />
 
                </div>
                {/* content box ^*/}

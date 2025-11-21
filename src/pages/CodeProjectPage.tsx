@@ -2,6 +2,7 @@ import { useColorMode } from "../context/ColorModeContext";
 import { useViewportSize } from "../context/useViewport";
 import SideBarNav from "../components/SideBarNav";
 import HeaderNav from "../components/HeaderNav";
+import Footer from "../components/Footer";
 
 type Widget = {
    format: number,
@@ -325,29 +326,29 @@ function CodeProjectPage(props: Props) {
          if (inp.src.includes(' - ') && inp.text.includes(' - ')) {
             const links = inp.src.split(' - ');
             const titles = inp.text.split(' - ');
-            return ( 
+            return (
                <div
-               style={{
-                  width: "90%",
-                  maxWidth: "1440px",
-                  padding: "16px",
-                  fontFamily: 'subheader',
-                  fontSize: "24px",
-                  textAlign: 'center',
-                  backgroundColor: colorMode ? palDark[5] : palLight[0],
-                  color: colorMode ? 'white' : palLight[5],
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  flexDirection: 'column'
-               }}
-            >{links.map((l, i) => (
-               <a target='_blank' href={l} key={i}>{titles[i]}</a>
-            ))}</div>
+                  style={{
+                     width: "90%",
+                     maxWidth: "1440px",
+                     padding: "16px",
+                     fontFamily: 'subheader',
+                     fontSize: "24px",
+                     textAlign: 'center',
+                     backgroundColor: colorMode ? palDark[5] : palLight[0],
+                     color: colorMode ? 'white' : palLight[5],
+                     display: 'flex',
+                     alignItems: 'flex-start',
+                     flexDirection: 'column'
+                  }}
+               >{links.map((l, i) => (
+                  <a target='_blank' href={l} key={i}>{titles[i]}</a>
+               ))}</div>
             )
          }
 
-         return ( 
-               <div
+         return (
+            <div
                style={{
                   width: "90%",
                   maxWidth: "1440px",
@@ -460,6 +461,9 @@ function CodeProjectPage(props: Props) {
                   </article>
 
                   {/* conent area ^*/}
+
+
+                  <Footer />
 
 
 

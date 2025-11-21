@@ -5,6 +5,7 @@ import { programs } from "../context/useContent";
 import CodeComponent from "../components/CodeComponent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
+import Footer from "../components/Footer";
 
 import { useEffect } from "react";
 
@@ -30,49 +31,49 @@ function CodePage() {
 
    const nav = useNavigate();
 
-      function renderLinks() {
-      
-            return (
-               programs.map(program => (
-                  <button
-                  onClick={() => {nav(`/code#${program.ref}`)}}
-                  key={program.ref}
-                  className='editLinkButton'
+   function renderLinks() {
+
+      return (
+         programs.map(program => (
+            <button
+               onClick={() => { nav(`/code#${program.ref}`) }}
+               key={program.ref}
+               className='editLinkButton'
+               style={{
+                  borderBottomLeftRadius: "8px",
+                  borderBottomRightRadius: "8px",
+                  border: "none",
+                  boxShadow: bs,
+                  display: "flex",
+                  backgroundColor: colorMode ? palDark[1] : palLight[5],
+                  justifyContent: "space-between",
+                  padding: "8px",
+                  marginBottom: "16px",
+                  borderTop: `solid 4px ${colorMode ? palDark[4] : palLight[2]}`
+               }}
+            >
+               <h3
                   style={{
-                     borderBottomLeftRadius: "8px",
-                     borderBottomRightRadius: "8px",
-                     border: "none",
-                     boxShadow: bs,
-                     display: "flex",
-                     backgroundColor: colorMode ? palDark[1] : palLight[5],
-                     justifyContent: "space-between",
-                     padding: "8px",
-                     marginBottom: "16px",
-                     borderTop: `solid 4px ${colorMode ? palDark[4] : palLight[2]}`
+                     fontFamily: "subheader",
+                     fontSize: "16px",
+                     color: "white"
                   }}
-                  >
-                     <h3
-                        style={{
-                           fontFamily: "subheader",
-                           fontSize: "16px",
-                           color: "white"
-                        }}
-                     >
-                        {program.title}
-                     </h3>
-      
-                     <p
-                        style={{
-                           fontFamily: "subtext",
-                           fontSize: "16px",
-                           color: "white"
-                        }}
-                     >{program.meta}</p>
-      
-                  </button>
-               ))
-            )
-      }
+               >
+                  {program.title}
+               </h3>
+
+               <p
+                  style={{
+                     fontFamily: "subtext",
+                     fontSize: "16px",
+                     color: "white"
+                  }}
+               >{program.meta}</p>
+
+            </button>
+         ))
+      )
+   }
 
    function renderComponents() {
       if (programs.length < 1) return
@@ -200,7 +201,7 @@ function CodePage() {
                            boxShadow: bs
                         }}
                      >
-                        I have been programming for almost 2 years as of November 2025. I began learning python my freshman year of college, however I failed to grasp the underlying concept of programming then. About a year later I started learning Javascript as a means to create digital art for a course I was taking. Since then Ive gotten very into web development as a whole using everything from node js, express, websockets, nginx, react, structured query language, basically as many aspects of web development as I can in that time. Ive spent much time deploying a number of full stack application using AWS such as a skydiving logbook CRUD app I made over the last summer. A project Im working on now (november 2025) is a social app for a local T-shirt buisness.(github link on my about page and at the bottom of the page)   
+                        I have been programming for almost 2 years as of November 2025. I began learning python my freshman year of college, however I failed to grasp the underlying concept of programming then. About a year later I started learning Javascript as a means to create digital art for a course I was taking. Since then Ive gotten very into web development as a whole using everything from node js, express, websockets, nginx, react, structured query language, basically as many aspects of web development as I can in that time. Ive spent much time deploying a number of full stack application using AWS such as a skydiving logbook CRUD app I made over the last summer. A project Im working on now (november 2025) is a social app for a local T-shirt buisness.(github link on my about page and at the bottom of the page)
                      </div>
 
 
@@ -226,6 +227,9 @@ function CodePage() {
 
 
                   {renderComponents()}
+
+
+                  <Footer />
 
 
 
