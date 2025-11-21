@@ -85,7 +85,7 @@ function CodeComponentMobile(props: props) {
                   <h1
                      style={{
                         fontFamily: "title",
-                        fontSize: '18px'
+                        fontSize: '14px'
                      }}
                   >{title}</h1>
                   <p

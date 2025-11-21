@@ -4,6 +4,8 @@ import SideBarNav from "../components/SideBarNav";
 import HeaderNav from "../components/HeaderNav";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import MobileHeader from "../mobileComponents/MobileHeader";
+import MobileNav from "../mobileComponents/MobileNav";
 
 function GibsPage() {
 
@@ -166,7 +168,25 @@ function GibsPage() {
    }
 
 
+   function mobileLayout() {
+      return (
+         <>
+            <div
+               style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  marginBottom: '124px'
+               }}
+            >
+               <MobileHeader text='GIBS API User Interface' format='banner' />
 
+            </div>
+            <MobileNav />
+         </>
+      )
+   }
 
    function desktopLayout() {
 
@@ -546,6 +566,7 @@ function GibsPage() {
    return (
       <>
          {deviceType === 'desktop' && desktopLayout()}
+         {deviceType === 'mobile' && mobileLayout()}
 
          {/* background */}
          <div

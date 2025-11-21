@@ -370,6 +370,352 @@ function CodeProjectPage(props: Props) {
 
    }
 
+   function renderComponentMobile(inp: Widget) {
+
+      const renderWithBreaks = (input: string) => {
+         const lines = input.split("\n");
+
+         return lines.map((line, index) => (
+            <p key={index}>
+               {line}
+               {index < lines.length - 1 && <br />}
+            </p>
+         ));
+      };
+
+
+      // text body
+      if (inp.format === 0) {
+         return (
+            <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'body',
+                  fontSize: "14px",
+                  textAlign: 'left',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? palDark[2] : 'black'
+               }}
+            >
+               {inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}
+            </div>
+         )
+      }
+      // landscape left
+      if (inp.format === 1) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'flex-start',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+            <img
+               style={{
+                  width: '60%',
+                  borderRadius: "8px",
+                  boxShadow: bs
+               }}
+               alt='your browser doesnt support images'
+               src={inp.src}
+            />
+
+            <p
+               style={{ width: "30%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
+
+         </div>)
+      }
+
+      //landscape right
+      if (inp.format === 2) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'flex-start',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+
+            <p
+               style={{ width: "30%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
+
+            <img
+               style={{
+                  width: '60%',
+                  borderRadius: "8px",
+                  boxShadow: bs
+               }}
+               alt='your browser doesnt support images'
+               src={inp.src}
+            />
+
+         </div>)
+      }
+
+      //portrait left
+
+      if (inp.format === 3) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+
+            <img
+               style={{
+                  width: '30%',
+                  borderRadius: "8px",
+                  boxShadow: bs
+               }}
+               alt='your browser doesnt support images'
+               src={inp.src}
+            />
+
+            <p
+               style={{ width: "60%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
+
+         </div>)
+      }
+
+      //portrait right 
+
+      if (inp.format === 4) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+
+            <p
+               style={{ width: "60%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
+
+            <img
+               style={{
+                  width: '30%',
+                  borderRadius: "8px",
+                  boxShadow: bs
+               }}
+               alt='your browser doesnt support images'
+               src={inp.src}
+            />
+
+         </div>)
+      }
+
+      //iframe left portrait + text
+      if (inp.format === 5) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+
+            <iframe
+               style={{
+                  width: '30%',
+                  height: 'calc( (100vw * .9) * (.3) * 2)',
+                  maxHeight: 'calc( (1440px * .9) * (.3) * 2)',
+                  borderRadius: "8px",
+                  boxShadow: bs,
+                  border: "none"
+               }}
+               src={inp.src}
+            />
+
+            <p
+               style={{ width: "60%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
+
+         </div>)
+      }
+      //iframe landscape 
+      if (inp.format === 6) {
+         return (
+            <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'body',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  display: "flex",
+                  justifyContent: "center"
+               }}
+            >
+               <iframe
+                  style={{
+                     width: "80%",
+                     height: "calc( ((100vw * .9) * .8) * (.5) )",
+                     maxHeight: "calc ( ((1440px * .9) * .8) * (.5) )",
+                     borderRadius: '8px',
+                     boxShadow: bs,
+                     border: 'none',
+                  }}
+                  src={inp.src}
+               />
+            </div>
+         )
+      }
+
+      //image fullscreen landscape
+      if (inp.format === 7) {
+         return (<div
+            style={{
+               width: "90%",
+               maxWidth: "1440px",
+               padding: "16px",
+               fontFamily: 'body',
+               fontSize: "14px",
+               textAlign: 'left',
+               backgroundColor: colorMode ? palDark[5] : palLight[0],
+               color: colorMode ? palDark[2] : 'black',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               gap: "16px"
+            }}
+         >
+
+            <img
+               style={{
+                  width: '65%',
+                  borderRadius: "8px",
+                  boxShadow: bs
+               }}
+               alt='your browser doesnt support images'
+               src={inp.src}
+            />
+
+         </div>)
+      }
+
+      // header centered
+      if (inp.format === 8) {
+         return (
+            <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'subheader',
+                  fontSize: "14px",
+                  textAlign: 'center',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? 'white' : palLight[5],
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+               }}
+            >
+
+               {inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}
+
+            </div>
+         );
+      }
+
+      //link render
+      if (inp.format === 9) {
+         if (inp.src.includes(' - ') && inp.text.includes(' - ')) {
+            const links = inp.src.split(' - ');
+            const titles = inp.text.split(' - ');
+            return (
+               <div
+                  style={{
+                     width: "90%",
+                     maxWidth: "1440px",
+                     padding: "16px",
+                     fontFamily: 'subheader',
+                     fontSize: "12px",
+                     textAlign: 'center',
+                     backgroundColor: colorMode ? palDark[5] : palLight[0],
+                     color: colorMode ? 'white' : palLight[5],
+                     display: 'flex',
+                     alignItems: 'flex-start',
+                     flexDirection: 'column'
+                  }}
+               >{links.map((l, i) => (
+                  <a target='_blank' href={l} key={i}>{titles[i]}</a>
+               ))}</div>
+            )
+         }
+
+         return (
+            <div
+               style={{
+                  width: "90%",
+                  maxWidth: "1440px",
+                  padding: "16px",
+                  fontFamily: 'subheader',
+                  fontSize: "24px",
+                  textAlign: 'center',
+                  backgroundColor: colorMode ? palDark[5] : palLight[0],
+                  color: colorMode ? 'white' : palLight[5],
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  flexDirection: 'column'
+               }}
+            ><a target='_blank' href={inp.src}>{inp.text}</a></div>)
+      }
+
+   }
+
    function desktopLayout() {
 
       return (
@@ -494,6 +840,8 @@ function CodeProjectPage(props: Props) {
                }}
             >
                <MobileHeader text={title} format='banner' />
+
+               {content.map(i => renderComponentMobile(i))}
 
             </div>
             <MobileNav />
