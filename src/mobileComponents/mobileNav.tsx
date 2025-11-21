@@ -104,6 +104,7 @@ function MobileNav() {
 
             <button
                className='navButtonMobile'
+
                type='button'
                onClick={() => { nav('/edits') }}
             >
@@ -164,6 +165,9 @@ function MobileNav() {
             <button
                className='navButtonMobile'
                type='button'
+               style={{
+                  marginRight: '32px'
+               }}
                onClick={() => { nav('/code') }}
             >
 
@@ -221,6 +225,9 @@ function MobileNav() {
             <button
                className='navButtonMobile'
                type='button'
+               style={{
+                  marginRight: '32px'
+               }}
                onClick={() => { nav('/code') }}
             >
                <img
