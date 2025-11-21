@@ -275,11 +275,29 @@ function MobileNav() {
                flexDirection: "column",
                alignItems: "center",
                width: "20%",
-               height: "100%",
-               justifyContent: "center"
+               height: 'fit-content',
+               justifyContent: "center",
             }}
          >
-            <label className="switch">
+
+            <button
+               style={{
+                  position: 'relative',
+                  width: '48px',
+                  minHeight: '48px',
+                  borderRadius: '24px',
+                  top: '-24px',
+                  border: `1px solid ${colorMode ? palDark[0] : 'black'}`,
+                  backgroundColor: colorMode ? palDark[5] : palLight[0]
+               }}
+            >
+               {/* @ts-ignore */}
+               <ion-icon style={{color: colorMode ? 'white' : 'black', fontSize: '24px'}} name="search"></ion-icon>
+
+            </button>
+
+
+            <label className="switch" style={{position: 'relative', top: '-16px'}}>
                   <input type="checkbox" checked={colorMode} onChange={() => { toggleCM() }} />
                   <span className="slider round"></span>
                </label>
