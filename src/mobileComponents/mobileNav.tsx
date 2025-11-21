@@ -257,7 +257,8 @@ function MobileNav() {
             bottom: 0,
             height: '256px',
             display: "flex",
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            zIndex: 10
          }}
       >
 
