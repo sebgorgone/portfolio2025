@@ -6,6 +6,8 @@ import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
 import DesignComponent from "../components/DesignComponent";
 import Footer from "../components/Footer";
+import MobileNav from "../mobileComponents/MobileNav";
+import MobileHeader from "../mobileComponents/MobileHeader";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -92,6 +94,26 @@ function DesignPage() {
                <DesignComponent key={design.ref} design={design} />
             ))}
          </div>
+      )
+   }
+
+   function mobileLayout() {
+      return (
+         <>
+            <div
+               style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  marginBottom: '124px'
+               }}
+            >
+               <MobileHeader text='Design' format='banner' />
+
+            </div>
+            <MobileNav />
+         </>
       )
    }
 
@@ -229,6 +251,7 @@ function DesignPage() {
    return (
       <>
          {deviceType === 'desktop' && desktopLayout()}
+         {deviceType === 'mobile' && mobileLayout()}
 
          {/* background */}
          <div

@@ -3,6 +3,9 @@ import { useViewportSize } from "../context/useViewport";
 import SideBarNav from "../components/SideBarNav";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
+import MobileHeader from "../mobileComponents/MobileHeader";
+import MobileNav from "../mobileComponents/MobileNav";
+
 
 type Widget = {
    format: number,
@@ -478,10 +481,31 @@ function CodeProjectPage(props: Props) {
       )
    }
 
+   function mobileLayout() {
+      return (
+         <>
+            <div
+               style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  marginBottom: '124px'
+               }}
+            >
+               <MobileHeader text={title} format='banner' />
+
+            </div>
+            <MobileNav />
+         </>
+      )
+   }
+
 
    return (
       <>
          {deviceType === 'desktop' && desktopLayout()}
+         {deviceType === 'mobile' && mobileLayout()}
 
          {/* background */}
          <div

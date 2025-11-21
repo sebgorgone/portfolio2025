@@ -606,7 +606,7 @@ function HeaderNav() {
       setSearchResults(results);
 
 
-   }, [wildCard])
+   }, [wildCard]);
 
 
 

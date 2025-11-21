@@ -6,9 +6,10 @@ import EditComponent from "../components/EditComponent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
 import Footer from "../components/Footer";
-
+import MobileNav from "../mobileComponents/MobileNav";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import MobileHeader from "../mobileComponents/MobileHeader";
 
 function VideoEdits() {
    const location = useLocation();
@@ -93,6 +94,26 @@ function VideoEdits() {
 
             </button>
          ))
+      )
+   }
+
+   function mobileLayout() {
+      return (
+         <>
+            <div
+               style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  marginBottom: '124px'
+               }}
+            >
+               <MobileHeader text='Video Editing' format='banner' />
+
+            </div>
+            <MobileNav />
+         </>
       )
    }
 
@@ -242,6 +263,7 @@ function VideoEdits() {
    return (
       <>
          {deviceType === 'desktop' && desktopLayout()}
+         {deviceType === 'mobile' && mobileLayout()}
 
          {/* background */}
          <div

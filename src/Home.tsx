@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import HeaderNav from "./components/HeaderNav";
 import SideBarNav from './components/SideBarNav';
 import Footer from "./components/Footer";
-import MobileNav from "./mobileComponents/mobileNav";
+import MobileHeader from "./mobileComponents/MobileHeader";
+import MobileNav from "./mobileComponents/MobileNav";
 
 
 function Home() {
@@ -23,14 +24,14 @@ function Home() {
         <div
           style={{
             position: "fixed",
-            top: "128px",                  
+            top: "128px",
             left: 0,
             right: 0,
             bottom: 0,
             display: "flex",
             width: "100vw",
-            height: "calc(100vh - 128px)", 
-            overflow: "hidden",            
+            height: "calc(100vh - 128px)",
+            overflow: "hidden",
             zIndex: 1,
           }}
         >
@@ -669,7 +670,7 @@ function Home() {
               <h1
                 style={{
                   fontFamily: 'title',
-                  color: colorMode ? palDark[0] : 'black' 
+                  color: colorMode ? palDark[0] : 'black'
                 }}
               >About me</h1>
 
@@ -688,7 +689,7 @@ function Home() {
                   textAlign: 'center',
                   fontSize: "30"
                 }}>
-                  I like to ski, I like to skydive, And I love all things software. Occasionally I like to edit videos together for fun of the things I enjoy doing.
+                I like to ski, I like to skydive, And I love all things software. Occasionally I like to edit videos together for fun of the things I enjoy doing.
               </p>
 
             </div>
@@ -698,12 +699,12 @@ function Home() {
                 display: 'flex',
                 width: "100vw",
                 justifyContent: "center",
-                alignItems: 'center', 
+                alignItems: 'center',
                 gap: "24px",
                 marginBottom: "48px"
               }}
             >
-              <img 
+              <img
                 style={{
                   borderRadius: "8px",
                   boxShadow: bs,
@@ -713,7 +714,7 @@ function Home() {
                 src='home/canopy.jpg'
               />
 
-              <img 
+              <img
                 style={{
                   borderRadius: "8px",
                   boxShadow: bs,
@@ -723,7 +724,7 @@ function Home() {
                 src='home/ski.jpg'
               />
 
-              <img 
+              <img
                 style={{
                   borderRadius: "8px",
                   boxShadow: bs,
@@ -750,6 +751,18 @@ function Home() {
   function mobileLayout() {
     return (
       <>
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            alignItems: 'center',
+            flexDirection: 'column',
+            marginBottom: '124px'
+          }}
+        >
+          <MobileHeader text='Sebastian Gorgone' format='hero' />
+
+        </div>
         <MobileNav />
       </>
     )

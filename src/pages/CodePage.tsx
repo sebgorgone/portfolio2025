@@ -6,8 +6,10 @@ import CodeComponent from "../components/CodeComponent";
 import HeaderNav from "../components/HeaderNav";
 import SideBarNav from "../components/SideBarNav";
 import Footer from "../components/Footer";
-
+import MobileHeader from "../mobileComponents/MobileHeader";
+import MobileNav from "../mobileComponents/MobileNav";
 import { useEffect } from "react";
+import CodeComponentMobile from "../mobileComponents/CodeComponentMobile";
 
 function CodePage() {
 
@@ -30,6 +32,51 @@ function CodePage() {
 
 
    const nav = useNavigate();
+
+   function renderLinksMobile() {
+
+      return (
+         programs.map(program => (
+            <button
+               onClick={() => { nav(`/code#${program.ref}`) }}
+               key={program.ref}
+               className='editLinkButton'
+               style={{
+                  borderBottomLeftRadius: "8px",
+                  borderBottomRightRadius: "8px",
+                  border: "none",
+                  boxShadow: bs,
+                  display: "flex",
+                  flexDirection: 'column',
+                  backgroundColor: colorMode ? palDark[1] : palLight[5],
+                  justifyContent: "space-between",
+                  padding: "4px",
+                  marginBottom: "8px",
+                  borderTop: `solid 4px ${colorMode ? palDark[4] : palLight[2]}`
+               }}
+            >
+               <h3
+                  style={{
+                     fontFamily: "subheader",
+                     fontSize: "14px",
+                     color: "white"
+                  }}
+               >
+                  {program.title}
+               </h3>
+
+               <p
+                  style={{
+                     fontFamily: "subtext",
+                     fontSize: "9px",
+                     color: "white"
+                  }}
+               >{program.meta}</p>
+
+            </button>
+         ))
+      )
+   }
 
    function renderLinks() {
 
@@ -92,6 +139,28 @@ function CodePage() {
          >
             {programs.map(program => (
                <CodeComponent key={program.ref} project={program} />
+            ))}
+         </div>
+      )
+   }
+
+   function renderComponentsMobile() {
+      if (programs.length < 1) return
+
+      return (
+         <div
+            style={{
+               width: "100%",
+               display: "flex",
+               flexDirection: "column",
+               alignItems: "center",
+               marginTop: "48px",
+               marginBottom: "48px",
+               gap: "24px",
+            }}
+         >
+            {programs.map(program => (
+               <CodeComponentMobile key={program.ref} project={program} />
             ))}
          </div>
       )
@@ -243,21 +312,93 @@ function CodePage() {
       )
    }
 
-   return (<>
-      {deviceType === 'desktop' && desktopLayout()}
+   function mobileLayout() {
+      return (
+      <>
+            <div
+               style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  marginBottom: '124px',
+               }}
+            >
+               <MobileHeader text='Programming' format='banner' />
 
-      {/* background */}
-      <div
-         style={{
-            position: "fixed",
-            zIndex: -1,
-            backgroundColor: colorMode ? palDark[1] : palLight[1],
-            width: "100vw",
-            height: "100vh",
-            top: 0
-         }}
-      ></div>
-   </>)
+               <div
+                  style={{
+                     display: "flex",
+                     width: "100%",
+                     padding: "16px",
+                     gap: "16px",
+                     marginTop: "8px",
+                     flexDirection: "column",
+                     alignItems: "center"
+                  }}
+               >
+
+                  <div
+                     style={{
+                        display: "flex",
+                        width: "90%",
+                        justifyContent: "left",
+                        alignItems: "flex-start",
+                        fontFamily: "subHeader",
+                        color: colorMode ? palDark[0] : palLight[5],
+                        fontSize: "14px",
+                        background: colorMode ? "black" : "white",
+                        padding: "16px",
+                        boxShadow: bs
+                     }}
+                  >
+                     I have been programming for almost 2 years as of November 2025. I began learning python my freshman year of college, however I failed to grasp the underlying concept of programming then. About a year later I started learning Javascript as a means to create digital art for a course I was taking. Since then Ive gotten very into web development as a whole using everything from node js, express, websockets, nginx, react, structured query language, basically as many aspects of web development as I can in that time. Ive spent much time deploying a number of full stack application using AWS such as a skydiving logbook CRUD app I made over the last summer. A project Im working on now (november 2025) is a social app for a local T-shirt buisness.(github link on my about page and at the bottom of the page)
+                  </div>
+
+
+                  <div
+                     style={{
+                        display: "flex",
+                        width: "90%",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        padding: "4px",
+                        backgroundColor: colorMode ? "black" : "white",
+                        boxShadow: bs,
+                     }}
+                  >
+
+                     {renderLinksMobile()}
+
+                  </div>
+
+                  {renderComponentsMobile()}
+
+               </div>
+
+
+               </div>
+               <MobileNav />
+            </>
+            )
+  }
+
+            return (<>
+               {deviceType === 'desktop' && desktopLayout()}
+               {deviceType === 'mobile' && mobileLayout()}
+
+               {/* background */}
+               <div
+                  style={{
+                     position: "fixed",
+                     zIndex: -1,
+                     backgroundColor: colorMode ? palDark[1] : palLight[1],
+                     width: "100vw",
+                     height: "100vh",
+                     top: 0
+                  }}
+               ></div>
+            </>)
 }
 
-export default CodePage
+            export default CodePage
