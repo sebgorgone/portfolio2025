@@ -609,9 +609,55 @@ export const portfolio: Widget[] = [
    {
       format: 0,
       src: '',
-      text: 'Fast forward 9 months and Ive deployed a couple of fulstack projects and have done almost nothing but learn the ins and outs of we design as a whole. With this site being written in typescript and react, hacing a responsive mobile and desktop layout, built in search, and a completely modular architecture allowing me to add and remove different projects with ease. I want this to be the last porfolio repo I ever need to write'
-   }
-]
+      text: 'Fast forward 9 months and Ive deployed a couple of fulstack projects and have done almost nothing but learn the ins and outs of we design as a whole. With this site being written in typescript and react, hacing a responsive mobile and desktop layout, built in search, and a completely modular architecture allowing me to add and remove different projects with ease. I want this to be the last porfolio repo I ever need to write.'
+   },
+   {
+      format: 3,
+      src: 'codepage/portfolios/pfo3files.png',
+      text: 'My goal for this portfolio was to create as small and effecient of a codebase while incorperating as much as I can into it.\n The only module in top level source directory other than main is the home page. I did this only because it is unique from the other pages and required seperate attention. The pages folder houses all of the standalone pages that have their own URL paths via \'react-router-dom\'. Im using the hash router to simplify static hosting for the site.\n Any modules that get reused get put into the components folder including the header footer and sidebar, and the same goes for the mobileComponents folder for mobile. context is for global variables and logic. Finally any supplementray materials such as images and text get put into public with its ease of use in react projects.'
+   },
+   {
+      format: 7,
+      src: 'codepage/portfolios/pfo3compstructure.png',
+      text: ''
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'The useViewport context lets me globaly push the displaywidth as the screen size changes. With this I set a breakpoint at 1240px of width to discern desktop from mobile layouts. From there I built two seperate layouts for desktop and mobile respectively.'
+   },
+   {
+      format: 2,
+      src: 'codepage/portfolios/pfo3useviewport.png',
+      text: 'I pass this function into all of my components. Ultimately I only use the device type string variable as refactoring the breakpoint happens in one spot in my code base. Or if I want to add more layouts in the future for different widths I can do that in one place and just add one more conditional to my component return statements.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'I wanted this project to have very little over head for adding new content to it. So All of the pages conditionally render components from a single a ts document; Similar to a documentDB. The idea is in the future if I felt like it I could make a UI and database for myself to upload projects. This setup also makes it very nice to itterate over the documents strings and create search functions within the portfolio. Arguably it\'s unnessecary for a portfolio website, but I enjoyed writing the search algorithm and text highlighting features. I think its cool so it exists.'
+   },
+   {
+      format: 7,
+      src: 'codepage/portfolios/pfo3content.png',
+      text: ''
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Ultimately This Project has come a long way from my previous portfolios. The code reads so much better. The source directory is so much less bloated. The logic is plain and clear. And updating it takes very little effort. No drilling through componenets to change content. No jumping from file to file to change any content- Its all in one document. And nothing that gets added is ever added in more than one place in the code. It all lives in one spot, and propogates from there.'
+   },
+   {
+      format: 9,
+      src: 'https://github.com/sebgorgone/portfolio2025',
+      text: 'My Portfolio Github Repo'
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'My Second Portfolio (React + Javascript)'
+   },
+
+];
 
 
 

@@ -269,7 +269,7 @@ function CodePage() {
 
    function mobileLayout() {
       return (
-      <>
+         <>
             <div
                style={{
                   display: 'flex',
@@ -314,34 +314,34 @@ function CodePage() {
 
                   {renderComponentsMobile()}
 
-                 
+
 
                </div>
-                  
-                  <Footer />
 
-               </div>
-               <MobileNav />
-            </>
-            )
-  }
+               <Footer />
 
-            return (<>
-               {deviceType === 'desktop' && desktopLayout()}
-               {deviceType === 'mobile' && mobileLayout()}
+            </div>
+            <MobileNav />
+         </>
+      )
+   }
 
-               {/* background */}
-               <div
-                  style={{
-                     position: "fixed",
-                     zIndex: -1,
-                     backgroundColor: colorMode ? palDark[1] : palLight[1],
-                     width: "100vw",
-                     height: "100vh",
-                     top: 0
-                  }}
-               ></div>
-            </>)
+   return (<>
+      {deviceType === 'desktop' && desktopLayout()}
+      {deviceType === 'mobile' && mobileLayout()}
+
+      {/* background */}
+      <div
+         style={{
+            position: "fixed",
+            zIndex: -1,
+            backgroundColor: colorMode ? palDark[1] : palLight[1],
+            width: "100vw",
+            height: "100vh",
+            top: 0
+         }}
+      ></div>
+   </>)
 }
 
-            export default CodePage
+export default CodePage

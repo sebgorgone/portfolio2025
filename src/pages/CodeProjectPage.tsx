@@ -707,7 +707,7 @@ function CodeProjectPage(props: Props) {
                   maxWidth: "1440px",
                   padding: "16px",
                   fontFamily: 'subheader',
-                  fontSize: "24px",
+                  fontSize: "12px",
                   textAlign: 'center',
                   backgroundColor: colorMode ? palDark[5] : palLight[0],
                   color: colorMode ? 'white' : palLight[5],
@@ -810,13 +810,15 @@ function CodeProjectPage(props: Props) {
                      }}
                   >
                      {content.map(i => renderComponent(i))}
+                     
+                     <Footer />
 
                   </article>
 
                   {/* conent area ^*/}
 
 
-                  <Footer />
+                  
 
 
 
@@ -848,6 +850,7 @@ function CodeProjectPage(props: Props) {
                {content.map(i => renderComponentMobile(i))}
 
             </div>
+            <Footer />
             <MobileNav />
          </>
       )
