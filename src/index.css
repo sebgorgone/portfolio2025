@@ -89,16 +89,16 @@ input:checked + .slider:before {
 .navButtonMobile {
   background: none;
   border: none;
-  width: 128px;
-  height: 128px;
+  width: 32px;
+  height: 32px;
   border-radius: 64px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1),0 2px 4px rgba(0, 0, 0, 0.1),0 4px 8px rgba(0, 0, 0, 0.1),0 8px 16px rgba(0, 0, 0, 0.1),0 16px 32px rgba(0, 0, 0, 0.1);
   margin-left: 32px;
 }
 
 .navButtonMobile img {
-  width: 128px;
-  height: 128px;
+  width: 32px;
+  height: 32px;
 
 }
 
@@ -184,65 +184,3 @@ button {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4),0 2px 4px rgba(0, 0, 0, 0.3),0 4px 8px rgba(0, 0, 0, 0.2),0 8px 16px rgba(0, 0, 0, 0.15),0 16px 32px rgba(0, 0, 0, 0.01);
 }
 
-/* mobile slider */
-
-.switchMobile {
-  position: relative;
-  display: inline-block;
-  width: 140px;
-  height: 86px;
-}
-
-.switchMobile input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.sliderMobile {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #b8b8b8;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 43px;
-}
-
-.sliderMobile:before {
-  position: absolute;
-  content: "";
-  height: 78px;
-  width: 78px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #085578;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .sliderMobile {
-  background-color: #62127D;
-}
-
-input:focus + .sliderMobile {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .sliderMobile:before {
-  -webkit-transform: translateX(53px);
-  -ms-transform: translateX(53px);
-  transform: translateX(53px);
-}
-
-.sliderMobile.round {
-  border-radius: 43px;
-
-}
-
-.sliderMobile.round:before {
-  border-radius: 100%;
-}

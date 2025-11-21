@@ -36,7 +36,7 @@ function MobileNav() {
                <h3
                   style={{
                      color: palDark[2],
-                     fontSize: "24px"
+                     fontSize: "12px"
                   }}
                   className='buttonTitle'
                >
@@ -64,7 +64,7 @@ function MobileNav() {
                <h3
                   style={{
                      color: palDark[2],
-                     fontSize: "24px"
+                     fontSize: "12px"
                   }}
                   className='buttonTitle'
                >
@@ -96,7 +96,7 @@ function MobileNav() {
                   className='buttonTitle'
                   style={{
                      color: "black",
-                     fontSize: "24px"
+                     fontSize: "12px"
                   }}
                >home</h3>
 
@@ -121,7 +121,7 @@ function MobileNav() {
                   className='buttonTitle'
                   style={{
                      color: "black",
-                     fontSize: "24px"
+                     fontSize: "12px"
                   }}
                >edits</h3>
 
@@ -152,7 +152,7 @@ function MobileNav() {
                <h3
                   style={{
                      color: palDark[2],
-                     fontSize: '24px'
+                     fontSize: '12px'
                   }}
                   className='buttonTitle'
                >
@@ -180,7 +180,7 @@ function MobileNav() {
                <h3
                   style={{
                      color: palDark[2],
-                     fontSize: '24px'
+                     fontSize: '12px'
                   }}
                   className='buttonTitle'
                >
@@ -211,7 +211,7 @@ function MobileNav() {
                className='buttonTitle' 
                style={{ 
                   color: "black",
-                  fontSize: '24px'
+                  fontSize: '12px'
                   }}>
                      design
                   </h3>
@@ -237,7 +237,7 @@ function MobileNav() {
                className='buttonTitle' 
                style={{ 
                   color: "black",
-                  fontSize: '24px'
+                  fontSize: '12px'
                }}
                >
                   code
@@ -255,7 +255,7 @@ function MobileNav() {
             backgroundColor: colorMode ? palDark[5] : palLight[0],
             position: "fixed",
             bottom: 0,
-            height: '256px',
+            height: '86px',
             display: "flex",
             justifyContent: 'space-between',
             zIndex: 10
@@ -278,9 +278,9 @@ function MobileNav() {
                justifyContent: "center"
             }}
          >
-            <label className="switchMobile">
+            <label className="switch">
                   <input type="checkbox" checked={colorMode} onChange={() => { toggleCM() }} />
-                  <span className="sliderMobile round"></span>
+                  <span className="slider round"></span>
                </label>
          </div>
 
