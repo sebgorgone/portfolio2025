@@ -656,7 +656,52 @@ export const portfolio: Widget[] = [
       src: '',
       text: 'My Second Portfolio (React + Javascript)'
    },
-
+   {
+      format: 0,
+      src: '',
+      text: 'This was my do-over portfolio that I had abandoned in the wake of the start of semester at college. When I began this project I had knew I could make a better portfolio with the time I had spent writing code since my first portfolio. I designed it with a sketch and built it in react, but never got around to finishing it. Since then I have been tasked with making a portfolio for a school assignment, and as much as I dont think it would be fair to just finish the code written for my previous portfolio, I also knew again that I could do so much better if I started fresh. So here I am.',
+   },
+   {
+      format: 2,
+      src: 'codepage/portfolios/pfo2dark.png',
+      text: 'I knew going into my previous portfolio I wanted to make a dark and light mode. So naturally I had to make sure this one had it too. The major contrast in the two portfolio\'s dark mode functionality is that this one uses a context hook to distribute that variable to the components.'
+   },
+   {
+      format: 1,
+      src: 'codepage/portfolios/pfo2light.png',
+      text: ' In my previous portfolio the dark mode was passed through the app with alot of messy prop drilling making refactors more work alone then starting new. This new portfolio aims to utilize component props as little as possible, as well as keeping nested structure to an absolute minimum.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: `This previous portfolio used a deeply nested structure of components all rendered through simple boolean variables making the app quite messy. For most of the pages I hard coded just about all of the projects into the pages, and there was no router as the app simply rendered the home page with a router object conataining a boolean for each of of the top level pages, and then a seperate router within the code \'page\'. This didnt just make developing the app cumbersome but also debugging the code a lengthy task. Not to mention I did not use typescript for this project making the debugging that much harder.\n The app was structured somewhat like this.\n|-App.jsx\n|\n|---Home.jsx\n|\n|---Design.jsx\n|\n|---VideoEdits.jsx\n|\n|---Code.jsx\n----|\n----|---ProjectA.jsx\n----|\n----|---ProjectB.jsx\n----|\n----|---etc...`
+   },
+   {
+      format: 3,
+      src: 'codepage/portfolios/pfo2ve.png',
+      text: 'All this being said I learned alot making this project. I implemented new design patterns into my programming. I made use of new areas in the react framework, Used new libraries, And I statically hosted my video files outside of my source folder for the first time.\nI also used this project to originally mess around with the GIBS api for the first time'
+   },
+   {
+      format: 7,
+      src: 'codepage/portfolios/pfo2proj.png',
+      text: ''
+   },
+   {
+      format: 8,
+      src: '',
+      text: 'My First Portfolio (also my first web project)'
+   },
+   {
+      format: 7,
+      src: 'codepage/portfolios/pfohome.png',
+      text: ''
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Needless to say this project was an introduction to html for me. I used this project to mess around with html and css as a whole. As I previously mentioned I decided to make this project to showcase what ended up being the background of the portfolio. The rest of it was a learning process to say the least. Theres nothing dynamic or even remotely visually apealing. I was just enthralled by how markup worked and I ran with it. I like to think since then Ive learned so much about frontend design and scaling my html element.'
+   }
+      
 ];
 
 
