@@ -10,6 +10,7 @@ import MobileNav from "../mobileComponents/MobileNav";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MobileHeader from "../mobileComponents/MobileHeader";
+import EditComponentMobile from "../mobileComponents/EditComponentMobile";
 
 function VideoEdits() {
    const location = useLocation();
@@ -48,6 +49,26 @@ function VideoEdits() {
          >
             {edits.map(edit => (
                <EditComponent key={edit.ref} edit={edit} />
+            ))}
+         </div>
+      )
+   }
+
+   function renderEditsMobile() {
+      if (edits.length < 1) return
+
+      return (
+         <div
+            style={{
+               width: "100%",
+               display: "flex",
+               flexDirection: "column",
+               alignItems: "center",
+               marginTop: "48px"
+            }}
+         >
+            {edits.map(edit => (
+               <EditComponentMobile key={edit.ref} edit={edit} />
             ))}
          </div>
       )
@@ -110,6 +131,28 @@ function VideoEdits() {
                }}
             >
                <MobileHeader text='Video Editing' format='banner' />
+               <div
+                  style={{
+                     display: "flex",
+                     width: '90%',
+                     justifyContent: "left",
+                     alignItems: "flex-start",
+                     fontFamily: "subHeader",
+                     color: colorMode ? palDark[0] : palLight[5],
+                     fontSize: "11px",
+                     background: colorMode ? "black" : "white",
+                     padding: "16px",
+                     boxShadow: bs,
+                     marginTop: '8px',
+                     marginBottom: '8px'
+                  }}
+               >
+                  As early as I had access to a computer I've loved editing videos. It didnt matter what I had- video games, skiing, skatebaording, sports. If I had clips of it I made an edit. Its always been a big hobby of mine and I feel a fitting part of my portfolio. I post just about all of them on my instagram. Link at the bottom of the page.
+               </div>
+
+               {renderEditsMobile()}
+
+               <Footer />
 
             </div>
             <MobileNav />

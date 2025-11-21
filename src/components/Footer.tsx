@@ -136,6 +136,87 @@ function Footer() {
       )
    };
 
+   function mobileLayout() {
+
+
+
+      return (
+         <>
+            <div
+               style={{ 
+                  display: 'flex',
+                  width: "100%",
+                  padding: "8px",
+                  justifyContent: "space-around",
+                  alignItems: 'center',
+                  flexWrap: "wrap",
+                  flexDirection: 'column'
+               }}
+            >
+
+               {renderLinks(edits)}
+
+               {renderLinks(designs)}
+
+               {renderLinks(programs)}
+
+
+
+            </div>
+
+            <div
+               style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "16px",
+                  alignItems: "center"
+               }}
+            >
+               <a
+                  target='_blank'
+                  href='https://www.linkedin.com/in/sebastian-gorgone/'
+                  style={{
+                     color: colorMode ? palDark[1]: palLight[1],
+                     fontSize: '24px',
+                     fontFamily: 'body'
+                  }}
+               >LinkedIn</a>
+               <a
+                  target='_blank'
+                  href='https://www.instagram.com/_sgorgone'
+                  style={{
+                     color: colorMode ? palDark[1]: palLight[1],
+                     fontSize: '24px',
+                     fontFamily: 'body'
+                  }}
+               >Instagram</a>
+               <a
+                  target='_blank'
+                  href='https://github.com/sebgorgone'
+                  style={{
+                     color: colorMode ? palDark[1]: palLight[1],
+                     fontSize: '24px',
+                     fontFamily: 'body'
+                  }}
+               >GitHub</a>
+
+            </div>
+
+            <div
+               style={{
+                  width: "100%",
+                  display: 'flex',
+                  fontSize: "12px",
+                  fontFamily: 'subtext',
+                  color: colorMode ? 'white' : palLight[5],
+                  justifyContent: 'center'
+               }}
+            >Sebastian Gorgone 2025</div>
+         </>
+      )
+   };
+
 
    return (
 
@@ -151,6 +232,8 @@ function Footer() {
       >
 
          {deviceType === 'desktop' && desktopLayout()}
+
+         {deviceType === 'mobile' && mobileLayout()}
 
       </div>
 

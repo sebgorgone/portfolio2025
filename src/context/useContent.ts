@@ -1,4 +1,5 @@
-
+//upload media to cloudinary
+//add data to edits array
 
 export const edits = [
 
@@ -73,7 +74,7 @@ export const edits = [
 
 export const designs = [
    {
-      title: 'illustrator final project',
+      title: 'Illustrator Final Project',
       meta: 'Illustrator 2024',
       format: "landscape",
       mediaType: 'image',
@@ -82,7 +83,7 @@ export const designs = [
       path:'designs/imadethisinalecture.png'
    },
    {
-      title: 'illustrator pen-tool project',
+      title: 'Illustrator Pen-Tool Project',
       meta: 'Illustrator 2024',
       format: 'portrait',
       mediaType: 'image',
@@ -157,7 +158,7 @@ export const programs = [
       ]
    },
    {
-      title: 'GIBS api User Interface',
+      title: 'GIBS API  User Interface',
       description: "A small project that uses the GIBS satellite imaging database api. It sets variables within a uri that changes the zoom, position, and date of the images its pulling from.",
       meta: 'Typescript-React 2025',
       page: '/code/gibs',
@@ -598,6 +599,19 @@ export const turningCubes: Widget[] = [
    }
 
 ];
+
+export const portfolio: Widget[] = [
+   {
+      format: 0,
+      src: '',
+      text: 'Building portfolios has been what has brought me to web development in the first place. I wanted a place to display my javascript project that I had made for school. I quickly realized theres not a great way to do that from a template based site like wix or otherwise. So I caved and learned html- I wrote a static portfolio site with alot of standalone html and css and quickly fell in love with web development. It took me just about a month to learn and write the full site. I definetly wrote some code I would never write in a similar way ever again, but ultimately I learned so much about the basics of web development in the process.'
+   },
+   {
+      format: 0,
+      src: '',
+      text: 'Fast forward 9 months and Ive deployed a couple of fulstack projects and have done almost nothing but learn the ins and outs of we design as a whole. With this site being written in typescript and react, hacing a responsive mobile and desktop layout, built in search, and a completely modular architecture allowing me to add and remove different projects with ease. I want this to be the last porfolio repo I ever need to write'
+   }
+]
 
 
 

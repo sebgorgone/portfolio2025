@@ -33,51 +33,6 @@ function CodePage() {
 
    const nav = useNavigate();
 
-   function renderLinksMobile() {
-
-      return (
-         programs.map(program => (
-            <button
-               onClick={() => { nav(`/code#${program.ref}`) }}
-               key={program.ref}
-               className='editLinkButton'
-               style={{
-                  borderBottomLeftRadius: "8px",
-                  borderBottomRightRadius: "8px",
-                  border: "none",
-                  boxShadow: bs,
-                  display: "flex",
-                  flexDirection: 'column',
-                  backgroundColor: colorMode ? palDark[1] : palLight[5],
-                  justifyContent: "space-between",
-                  padding: "4px",
-                  marginBottom: "8px",
-                  borderTop: `solid 4px ${colorMode ? palDark[4] : palLight[2]}`
-               }}
-            >
-               <h3
-                  style={{
-                     fontFamily: "subheader",
-                     fontSize: "14px",
-                     color: "white"
-                  }}
-               >
-                  {program.title}
-               </h3>
-
-               <p
-                  style={{
-                     fontFamily: "subtext",
-                     fontSize: "9px",
-                     color: "white"
-                  }}
-               >{program.meta}</p>
-
-            </button>
-         ))
-      )
-   }
-
    function renderLinks() {
 
       return (
@@ -346,7 +301,7 @@ function CodePage() {
                         alignItems: "flex-start",
                         fontFamily: "subHeader",
                         color: colorMode ? palDark[0] : palLight[5],
-                        fontSize: "14px",
+                        fontSize: "11px",
                         background: colorMode ? "black" : "white",
                         padding: "16px",
                         boxShadow: bs
@@ -356,26 +311,14 @@ function CodePage() {
                   </div>
 
 
-                  <div
-                     style={{
-                        display: "flex",
-                        width: "90%",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        padding: "4px",
-                        backgroundColor: colorMode ? "black" : "white",
-                        boxShadow: bs,
-                     }}
-                  >
-
-                     {renderLinksMobile()}
-
-                  </div>
 
                   {renderComponentsMobile()}
 
-               </div>
+                 
 
+               </div>
+                  
+                  <Footer />
 
                </div>
                <MobileNav />

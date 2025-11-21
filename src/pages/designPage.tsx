@@ -11,6 +11,7 @@ import MobileHeader from "../mobileComponents/MobileHeader";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import DesignComponentMobile from "../mobileComponents/DesignComponentMobile";
 
 function DesignPage() {
    const location = useLocation();
@@ -97,6 +98,26 @@ function DesignPage() {
       )
    }
 
+   function renderDesignsMobile() {
+      if (designs.length < 1) return
+
+      return (
+         <div
+            style={{
+               width: "100%",
+               display: "flex",
+               flexDirection: "column",
+               alignItems: "center",
+               marginTop: "48px"
+            }}
+         >
+            {designs.map(design => (
+               <DesignComponentMobile key={design.ref} design={design} />
+            ))}
+         </div>
+      )
+   }
+
    function mobileLayout() {
       return (
          <>
@@ -111,6 +132,10 @@ function DesignPage() {
             >
                <MobileHeader text='Design' format='banner' />
 
+               {renderDesignsMobile()}
+
+
+               <Footer />
             </div>
             <MobileNav />
          </>

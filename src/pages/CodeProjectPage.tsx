@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import MobileHeader from "../mobileComponents/MobileHeader";
 import MobileNav from "../mobileComponents/MobileNav";
 
-
 type Widget = {
    format: number,
    src: string,
@@ -416,14 +415,15 @@ function CodeProjectPage(props: Props) {
                backgroundColor: colorMode ? palDark[5] : palLight[0],
                color: colorMode ? palDark[2] : 'black',
                display: 'flex',
-               alignItems: 'flex-start',
+               alignItems: 'center',
                justifyContent: 'center',
-               gap: "16px"
+               gap: "16px",
+               flexDirection: 'column'
             }}
          >
             <img
                style={{
-                  width: '60%',
+                  width: '90%',
                   borderRadius: "8px",
                   boxShadow: bs
                }}
@@ -432,7 +432,7 @@ function CodeProjectPage(props: Props) {
             />
 
             <p
-               style={{ width: "30%" }}
+               style={{ width: "90%" }}
             >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
@@ -451,25 +451,26 @@ function CodeProjectPage(props: Props) {
                backgroundColor: colorMode ? palDark[5] : palLight[0],
                color: colorMode ? palDark[2] : 'black',
                display: 'flex',
-               alignItems: 'flex-start',
+               alignItems: 'center',
                justifyContent: 'center',
-               gap: "16px"
+               gap: "16px",
+               flexDirection: 'column'
             }}
          >
 
-            <p
-               style={{ width: "30%" }}
-            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
-
             <img
                style={{
-                  width: '60%',
+                  width: '90%',
                   borderRadius: "8px",
                   boxShadow: bs
                }}
                alt='your browser doesnt support images'
                src={inp.src}
             />
+
+            <p
+               style={{ width: "90%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
       }
@@ -490,13 +491,14 @@ function CodeProjectPage(props: Props) {
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
-               gap: "16px"
+               gap: "16px",
+               flexDirection: 'column'
             }}
          >
 
             <img
                style={{
-                  width: '30%',
+                  width: '80%',
                   borderRadius: "8px",
                   boxShadow: bs
                }}
@@ -505,7 +507,7 @@ function CodeProjectPage(props: Props) {
             />
 
             <p
-               style={{ width: "60%" }}
+               style={{ width: "90%" }}
             >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
@@ -527,23 +529,24 @@ function CodeProjectPage(props: Props) {
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
-               gap: "16px"
+               gap: "16px",
+               flexDirection: 'column'
             }}
          >
 
-            <p
-               style={{ width: "60%" }}
-            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
-
             <img
                style={{
-                  width: '30%',
+                  width: '80%',
                   borderRadius: "8px",
                   boxShadow: bs
                }}
                alt='your browser doesnt support images'
                src={inp.src}
             />
+
+            <p
+               style={{ width: "90%" }}
+            >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
       }
@@ -563,13 +566,14 @@ function CodeProjectPage(props: Props) {
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
-               gap: "16px"
+               gap: "16px",
+               flexDirection: 'column'
             }}
          >
 
             <iframe
                style={{
-                  width: '30%',
+                  width: '80%',
                   height: 'calc( (100vw * .9) * (.3) * 2)',
                   maxHeight: 'calc( (1440px * .9) * (.3) * 2)',
                   borderRadius: "8px",
@@ -580,7 +584,7 @@ function CodeProjectPage(props: Props) {
             />
 
             <p
-               style={{ width: "60%" }}
+               style={{ width: "90%" }}
             >{inp.text.includes('\n') ? renderWithBreaks(inp.text) : inp.text}</p>
 
          </div>)
@@ -601,7 +605,7 @@ function CodeProjectPage(props: Props) {
             >
                <iframe
                   style={{
-                     width: "80%",
+                     width: "90%",
                      height: "calc( ((100vw * .9) * .8) * (.5) )",
                      maxHeight: "calc ( ((1440px * .9) * .8) * (.5) )",
                      borderRadius: '8px',
@@ -635,7 +639,7 @@ function CodeProjectPage(props: Props) {
 
             <img
                style={{
-                  width: '65%',
+                  width: '90%',
                   borderRadius: "8px",
                   boxShadow: bs
                }}
@@ -646,7 +650,7 @@ function CodeProjectPage(props: Props) {
          </div>)
       }
 
-      // header centered
+      // header left
       if (inp.format === 8) {
          return (
             <div
