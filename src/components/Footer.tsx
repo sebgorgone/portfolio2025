@@ -12,6 +12,13 @@ function Footer() {
    function renderLinks(inp: any) {
       if (inp.length === 0) return
 
+      function getBase() {
+         if (inp === programs) return 'code'
+         if (inp === designs) return 'design'
+         if (inp === edits) return 'edits'
+         return
+      }
+
       return(
          <div
             style={{
@@ -46,7 +53,7 @@ function Footer() {
                   color: colorMode ? palDark[2] : palLight[5]
                }}
                target='_self'
-               href={`/#/edits#${n.ref}`}
+               href={`/portfolio2025/#/${getBase()}#${n.ref}`}
                >{n.title}</a>
             ))}
 

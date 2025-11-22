@@ -778,7 +778,7 @@ function Home() {
               style={{
                 display: "flex",
                 width: '90%',
-                height: '512px',
+                height: 'fit-content',
                 backgroundColor: colorMode ? palDark[5] : "white",
                 boxShadow: bs,
                 borderTop: `solid 8px ${palLight[4]}`,
@@ -962,7 +962,7 @@ function Home() {
               style={{
                 display: "flex",
                 width: '90%',
-                height: '512px',
+                height: 'fit-content',
                 backgroundColor: colorMode ? palDark[5] : "white",
                 boxShadow: bs,
                 borderTop: `solid 8px ${colorMode ? palDark[3] : palLight[3]}`,
@@ -1137,7 +1137,7 @@ function Home() {
               style={{
                 display: "flex",
                 width: '90%',
-                height: '512px',
+                height: 'fit-content',
                 backgroundColor: colorMode ? palDark[5] : "white",
                 boxShadow: bs,
                 borderTop: `solid 8px ${colorMode ? palDark[4] : palLight[2]}`,
