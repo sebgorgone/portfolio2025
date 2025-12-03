@@ -16,7 +16,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav('/edits')}}
             style={{
               fontFamily: "subheader",
-              fontSize: "32px",
+              fontSize: "24px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
@@ -37,7 +37,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav(`/edits#${edit.ref}`)}}
             style={{
               fontFamily: "body",
-              fontSize: "12px",
+              fontSize: "9px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
@@ -62,7 +62,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav('/deisgn')}}
             style={{
               fontFamily: "subheader",
-              fontSize: "32px",
+              fontSize: "24px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
@@ -83,7 +83,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav(`/design#${design.ref}`)}}
             style={{
               fontFamily: "body",
-              fontSize: "12px",
+              fontSize: "9px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
@@ -108,7 +108,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav('/code')}}
             style={{
               fontFamily: "subheader",
-              fontSize: "32px",
+              fontSize: "24px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
@@ -129,7 +129,7 @@ function SideBarNav() {
             onClick={() => { falseSB(); nav(`/code#${program.ref}`)}}
             style={{
               fontFamily: "body",
-              fontSize: "12px",
+              fontSize: "9px",
               color: colorMode ? "white": palLight[5],
               background: "none",
               border: "none",
