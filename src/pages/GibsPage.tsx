@@ -38,9 +38,9 @@ function GibsPage() {
    }, [z]);
 
    const zoomIn = () => {
-      if (z >= 6) return;
+      if (z >= 5) return;
       const gridSize = Math.pow(2, z);
-      const newZ = z + 1;      
+      const newZ = z + 1;
       const newSize = Math.pow(2, newZ);
       const normX = (x + 0.5) / gridSize;
       const normY = (y + 0.5) / gridSize;
@@ -167,6 +167,62 @@ function GibsPage() {
       )
    }
 
+   function renderGridUIMobile() {
+      if (z === 0) return
+
+      const scale = z > 5;
+
+      let limitX;
+
+      let limitY;
+
+      if (scale) {
+         limitX = Math.pow(2, 5) - 1;
+         limitY = Math.pow(2, 5) - 1;
+      } else {
+         limitX = upperBoundX
+         limitY = upperBoundY
+      }
+
+      return (
+         <div
+            style={{
+               width: "calc((100vh - 120px) * .35)",
+               height: "calc((100vh - 120px) * .35)",
+               background: colorMode ? palDark[0] : palLight[1],
+               display: "flex",
+               flexDirection: "column",
+               transition: '0ms'
+            }}
+         >
+            {Array.from({ length: limitY + 1 }).map((_, i) => (
+               <div
+                  key={i}
+                  style={{
+                     width: "100%",
+                     display: 'flex',
+                     flex: 1,
+                  }}
+               >
+                  {Array.from({ length: limitX + 1 }).map((_, j) => (
+                     <button
+                        key={j}
+                        style={{
+                           flex: 1,
+                           background: scale ? (y === i && x === j) ? 'gold' : 'none' : (y === i && x === j) ? 'gold' : 'none',
+                           border: 'solid 1px black'
+                        }}
+                        onClick={() => { setX(j); setY(i) }}
+                     >
+
+                     </button>
+                  ))}
+               </div>
+            ))}
+
+         </div>
+      )
+   }
 
    function mobileLayout() {
       return (
@@ -177,10 +233,171 @@ function GibsPage() {
                   width: '100%',
                   alignItems: 'center',
                   flexDirection: 'column',
-                  marginBottom: '124px'
+                  marginBottom: '124px',
+                  gap: '12px'
                }}
             >
                <MobileHeader text='GIBS API User Interface' format='banner' />
+
+               {renderGridUIMobile()}
+
+               <img
+                  style={{
+                     width: "calc((100vh - 120px) * .35)",
+                     boxShadow: bs,
+                     border: 'none',
+                     borderRadius: '5%',
+                     color: colorMode ? 'white' : 'black'
+                  }}
+                  alt='gibs api image https://nasa-gibs.github.io/gibs-api-docs/'
+                  src={tileUrl}
+               />
+
+               <div
+                  style={{
+                     display: "flex",
+                     flexDirection: 'column',
+                     alignItems: "center",
+                     gap: "8px",
+                     color: colorMode ? palDark[4] : palLight[5],
+                     backgroundColor: colorMode ? palDark[1] : palLight[1],
+                     borderRadius: '8px',
+                     boxShadow: bs
+                  }}
+               >
+
+                  <div
+                     style={{
+                        display: 'flex',
+                        alignItems: 'center'
+                     }}
+                  >
+
+                     <button
+                        type='button'
+                        onClick={() => {
+                           if (x === 0) return;
+                           setX(prev => prev - 1);
+                        }}
+                        style={{
+                           fontSize: "32px",
+                           background: "none",
+                           border: "none",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="caret-back-circle"></ion-icon>
+                     </button>
+
+                     <button
+                        type='button'
+                        onClick={() => {
+                           if (x === upperBoundX) return;
+                           setX(prev => prev + 1);
+                        }}
+                        style={{
+                           fontSize: "32px",
+                           background: "none",
+                           border: "none",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="caret-forward-circle"></ion-icon>
+                     </button>
+
+                     <button
+                        type='button'
+                        onClick={() => {
+                           if (y === 0) return;
+                           setY(prev => prev - 1);
+                        }}
+                        style={{
+                           fontSize: "32px",
+                           background: "none",
+                           border: "none",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="caret-up-circle"></ion-icon>
+                     </button>
+
+                     <button
+                        type='button'
+                        onClick={() => {
+                           if (y === upperBoundY) return;
+                           setY(prev => prev + 1);
+                        }}
+                        style={{
+                           fontSize: "32px",
+                           background: "none",
+                           border: "none",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="caret-down-circle"></ion-icon>
+                     </button>
+
+                     <button
+                        style={{
+                           border: "none",
+                           background: "none",
+                           fontSize: "32px",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                        type='button'
+                        onClick={
+                           () => {
+                              zoomOut()
+                           }
+                        }
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="remove-circle"></ion-icon>
+                     </button>
+
+                     <button
+                        style={{
+                           border: "none",
+                           background: "none",
+                           fontSize: "32px",
+                           color: colorMode ? palDark[0] : palLight[5],
+                        }}
+                        type='button'
+                        onClick={
+                           () => {
+                              zoomIn()
+                           }
+                        }
+                     >
+                        {/* @ts-ignore */}
+                        <ion-icon name="add-circle"></ion-icon>
+                     </button>
+
+                  </div>
+
+                  <div
+                     style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        color: colorMode ? palDark[0] : palLight[5],
+                        fontFamily: 'body',
+                        width: '75%',
+                        paddingBottom: '8px'
+                     }}
+                  >
+                     <p>x: {x}</p>
+                     <p>y: {y}</p>
+                     <p>z: {z}</p>
+
+                  </div>
+
+
+
+               </div>
 
             </div>
             <MobileNav />
