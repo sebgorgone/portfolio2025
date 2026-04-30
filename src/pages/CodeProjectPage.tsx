@@ -22,6 +22,8 @@ function CodeProjectPage(props: Props) {
    const { colorMode, palLight, palDark, bs } = useColorMode();
    const { deviceType } = useViewportSize();
    const { title, content } = props;
+   console.log('CodeProjectPage content', content);
+   const safeContent = Array.isArray(content) ? content : [];
 
    function renderComponent(inp: Widget) {
 
@@ -809,7 +811,7 @@ function CodeProjectPage(props: Props) {
 
                      }}
                   >
-                     {content.map(i => renderComponent(i))}
+                     {safeContent.map(i => renderComponent(i))}
                      
                      <Footer />
 
@@ -847,7 +849,7 @@ function CodeProjectPage(props: Props) {
             >
                <MobileHeader text={title} format='banner' />
 
-               {content.map(i => renderComponentMobile(i))}
+               {safeContent.map(i => renderComponentMobile(i))}
 
             </div>
             <Footer />

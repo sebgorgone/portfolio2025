@@ -8,7 +8,7 @@ import VideoEdits from './pages/VideoEdits.tsx';
 import DesignPage from './pages/designPage.tsx';
 import CodePage from './pages/CodePage.tsx';
 import GibsPage from './pages/GibsPage.tsx';
-import { cloudlog, invitedByNat, tasskManagement, jsBlockblast, turningCubes, portfolio } from './context/useContent.ts';
+import { cloudlog, invitedByNat, tasskManagement, jsBlockblast, turningCubes, portfolio, othello } from './context/useContent.ts';
 import CodeProjectPage from './pages/CodeProjectPage.tsx';
 
 
@@ -42,7 +42,9 @@ createRoot(document.getElementById('root')!).render(
 
           <Route path='/code/gibs' element={<GibsPage />} />
 
-          <Route path='code/portfolio' element={<CodeProjectPage title='The Portfolio' content={portfolio} />} />
+          <Route path='/code/portfolio' element={<CodeProjectPage title='The Portfolio' content={portfolio} />} />
+
+          <Route path='/code/othello' element={<CodeProjectPage title='Othello Online' content={othello} />} />
           
         </Routes>
       </HashRouter>
